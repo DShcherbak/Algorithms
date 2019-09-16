@@ -1,0 +1,3 @@
+/home/denysshcherbak/CLionProjects/Algorithms/Lab_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/denysshcherbak/CLionProjects/Algorithms/Lab_1/cmake-build-debug/CMakeFiles/Lab_1.dir
+/home/denysshcherbak/CLionProjects/Algorithms/Lab_1/cmake-build-debug/CMakeFiles/edit_cache.dir
