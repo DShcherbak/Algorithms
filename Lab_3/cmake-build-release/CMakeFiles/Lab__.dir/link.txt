@@ -1,1 +1,0 @@
-/usr/bin/c++  -O3 -DNDEBUG   CMakeFiles/Lab__.dir/main.cpp.o  -o Lab__ 
