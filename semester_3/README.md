@@ -1,5 +1,5 @@
-# Algorithms
-My Labs for Algorithm classes in university
+# Algorithms semester_3
+My Labs for Algorithms classes in university, semester_3
 
 Lab 1: Sorting with strict memory limit 
 
