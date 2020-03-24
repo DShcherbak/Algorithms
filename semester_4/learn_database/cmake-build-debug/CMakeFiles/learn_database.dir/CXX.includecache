@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/main.cpp
+stdio.h
+-
+stdlib.h
+-
+iostream
+-
+../sqlite3pp-master/headeronly_src/sqlite3pp.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/sqlite3pp-master/headeronly_src/sqlite3pp.h
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/sqlite3pp-master/headeronly_src/sqlite3pp.h
+functional
+-
+iterator
+-
+stdexcept
+-
+string
+-
+tuple
+-
+sqlite3ext.h
+-
+sqlite3.h
+-
+sqlite3pp.ipp
+/home/sadoffnick/Documents/University/STUDY/Algorithms/sqlite3pp-master/headeronly_src/sqlite3pp.ipp
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/sqlite3pp-master/headeronly_src/sqlite3pp.ipp
+cstring
+-
+memory
+-
+

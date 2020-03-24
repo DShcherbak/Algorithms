@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.cpp
+Node.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.h
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.h
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/main.cpp
+iostream
+-
+Node.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.h
+
