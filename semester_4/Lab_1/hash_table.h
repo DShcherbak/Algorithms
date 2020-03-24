@@ -1,15 +1,17 @@
 #ifndef LAB_1_HASH_TABLE_H
 #define LAB_1_HASH_TABLE_H
+
+#include "Folder.h"
 #include <map>
+
 
 using namespace std;
 
-const int mod = 1e9+7;
 
 template <class T>
         struct Node{
-    Node<T> next;
-    Node<T> prev;
+    Node<T>* next;
+    Node<T>* prev;
     T value;
 
     explicit Node(T _val){
@@ -35,5 +37,5 @@ public:
 template <class T>
 int hash_element(T elem);
 
-
+#include "hash_table.hpp"
 #endif //LAB_1_HASH_TABLE_H

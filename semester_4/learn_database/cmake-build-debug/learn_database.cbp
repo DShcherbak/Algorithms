@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug"/>
+				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug"/>
+				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="learn_database">
-				<Option output="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/learn_database" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug"/>
+				<Option output="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/learn_database" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn_database"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn_database"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="learn_database/fast">
-				<Option output="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/learn_database" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug"/>
+				<Option output="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/learn_database" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,30 +67,30 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn_database/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 learn_database/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug"/>
+				<Option working_dir="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/main.cpp">
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/main.cpp">
 			<Option target="learn_database"/>
 		</Unit>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/sqlite3pp-master/headeronly_src/sqlite3pp.h">
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/sqlite3pp-master/headeronly_src/sqlite3pp.h">
 			<Option target="learn_database"/>
 		</Unit>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/learn_database/CMakeLists.txt">
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/learn_database/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
