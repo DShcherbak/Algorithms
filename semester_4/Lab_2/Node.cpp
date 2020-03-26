@@ -1,4 +1,4 @@
-#include "Node.h"
+/*#include "Node.h"
 
 void add_node_to_tree(Node* head, Node* new_node){
     if(!head){
@@ -76,3 +76,4 @@ int min_value(Node* head){
     }
     return cur->value;
 }
+*/

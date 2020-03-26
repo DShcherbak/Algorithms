@@ -19,7 +19,7 @@ int hash_element(Folder* elem){
 
 template <class T>
 void HashTable<T>::insert_element(T new_elem) {
-    if(search_element(new_elem))
+    if(find_element(new_elem))
         return;
     auto new_node = new Node<T>(new_elem);
     int hash_code = hash_element(new_elem);
@@ -34,7 +34,7 @@ void HashTable<T>::insert_element(T new_elem) {
 }
 
 template <class T>
-bool HashTable<T>::search_element(T elem) {
+bool HashTable<T>::find_element(T elem) {
     int hash_code = hash_element(elem);
     if(table.find(hash_code) == table.end()){
         return false;
@@ -50,7 +50,7 @@ bool HashTable<T>::search_element(T elem) {
 
 template <class T>
 void HashTable<T>::delete_element(T elem) {
-    if(!search_element(elem))
+    if(!find_element(elem))
         return;
     int hash_code = hash_element(elem);
     auto head = table[hash_code];

@@ -43,10 +43,10 @@ RM = /home/sadoffnick/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2
+CMAKE_SOURCE_DIR = /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Lab_2.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/Lab_2.dir/flags.make
 
 CMakeFiles/Lab_2.dir/main.cpp.o: CMakeFiles/Lab_2.dir/flags.make
 CMakeFiles/Lab_2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lab_2.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_2.dir/main.cpp.o -c /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Lab_2.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_2.dir/main.cpp.o -c /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp
 
 CMakeFiles/Lab_2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/main.cpp > CMakeFiles/Lab_2.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp > CMakeFiles/Lab_2.dir/main.cpp.i
 
 CMakeFiles/Lab_2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/main.cpp -o CMakeFiles/Lab_2.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp -o CMakeFiles/Lab_2.dir/main.cpp.s
 
 CMakeFiles/Lab_2.dir/Node.cpp.o: CMakeFiles/Lab_2.dir/flags.make
 CMakeFiles/Lab_2.dir/Node.cpp.o: ../Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab_2.dir/Node.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_2.dir/Node.cpp.o -c /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Lab_2.dir/Node.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Lab_2.dir/Node.cpp.o -c /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Node.cpp
 
 CMakeFiles/Lab_2.dir/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab_2.dir/Node.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.cpp > CMakeFiles/Lab_2.dir/Node.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Node.cpp > CMakeFiles/Lab_2.dir/Node.cpp.i
 
 CMakeFiles/Lab_2.dir/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab_2.dir/Node.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/Node.cpp -o CMakeFiles/Lab_2.dir/Node.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Node.cpp -o CMakeFiles/Lab_2.dir/Node.cpp.s
 
 # Object files for target Lab_2
 Lab_2_OBJECTS = \
@@ -95,7 +95,7 @@ Lab_2: CMakeFiles/Lab_2.dir/main.cpp.o
 Lab_2: CMakeFiles/Lab_2.dir/Node.cpp.o
 Lab_2: CMakeFiles/Lab_2.dir/build.make
 Lab_2: CMakeFiles/Lab_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Lab_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Lab_2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab_2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/Lab_2.dir/clean:
 .PHONY : CMakeFiles/Lab_2.dir/clean
 
 CMakeFiles/Lab_2.dir/depend:
-	cd /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2 /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2 /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug /home/sadoffnick/Documents/University/STUDY/Algorithms/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Lab_2.dir/depend
 

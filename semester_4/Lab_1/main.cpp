@@ -62,19 +62,13 @@ void print_folders(const vector <Folder*> &included, const vector <Folder*> &exc
 
 bool test_for_correct_folders(HashTable<Folder*>* HT, const vector<Folder*>& included, const vector<Folder*>& excluded, const set<Folder*> &deleted = {}){
     for(auto fold : included)
-        if(!deleted.count(fold)  && !HT->search_element(fold)){
-            cout << "A" << endl;
+        if(!deleted.count(fold)  && !HT->find_element(fold))
             return false;
-        }
-        else if(deleted.count(fold) && HT->search_element(fold)){
-            cout << "B" << endl;
+        else if(deleted.count(fold) && HT->find_element(fold))
             return false;
-        }
     for(auto fold : excluded)
-        if(HT->search_element(fold)){
-            cout << "C" << endl;
+        if(HT->find_element(fold))
             return false;
-        }
     return true;
 }
 
@@ -95,19 +89,5 @@ int main() {
         }
     }
     assert(test_for_correct_folders(HT, included, excluded, deleted) && cout << "Test for deletion passed.\n");
-
-
-
     return 0;
 }
-
-/*cmake_minimum_required(VERSION 3.15)
-project(Lab_1)
-
-set(CMAKE_CXX_STANDARD 14)
-
-add_executable(Lab_1 main.cpp ../sqlite3pp-master/headeronly_src/sqlite3pp.h
-                hash_table.hpp hash_table.h
-                Folder.cpp Folder.h)
-
-target_link_libraries(${PROJECT_NAME} sqlite3)*/

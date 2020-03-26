@@ -28,7 +28,7 @@ private:
 public:
     void insert_element(T new_elem);
 
-    bool search_element(T elem);
+    bool find_element(T elem);
 
     void delete_element(T);
 
