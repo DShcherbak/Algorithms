@@ -5,6 +5,11 @@
 #include "Binary_Search_Tree.h"
 
 template <class T>
+struct RBNode : Node<T>{
+    bool black = true;
+};
+
+template <class T>
 class Red_Black_Tree : public Binary_Search_Tree<T> {
 
 };
