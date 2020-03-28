@@ -123,33 +123,6 @@ Lab_2/fast:
 	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/build
 .PHONY : Lab_2/fast
 
-Node.o: Node.cpp.o
-
-.PHONY : Node.o
-
-# target to build an object file
-Node.cpp.o:
-	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/Node.cpp.o
-.PHONY : Node.cpp.o
-
-Node.i: Node.cpp.i
-
-.PHONY : Node.i
-
-# target to preprocess a source file
-Node.cpp.i:
-	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/Node.cpp.i
-.PHONY : Node.cpp.i
-
-Node.s: Node.cpp.s
-
-.PHONY : Node.s
-
-# target to generate assembly for a file
-Node.cpp.s:
-	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/Node.cpp.s
-.PHONY : Node.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -186,9 +159,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Lab_2"
 	@echo "... edit_cache"
-	@echo "... Node.o"
-	@echo "... Node.i"
-	@echo "... Node.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

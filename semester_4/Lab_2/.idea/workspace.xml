@@ -12,34 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec3d455-1700-4215-9b3d-e6a3ad2065af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Lab_1/.idea/Lab_1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Red_Black_Tree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Red_Black_Tree.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/hash_table.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/hash_table.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/hash_table.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/hash_table.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Lab_1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/main.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Binary_Search_Tree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Binary_Search_Tree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Node.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/Node.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Red_Black_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Red_Black_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/Node.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/Node.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +51,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Lab_2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Lab_2" TARGET_NAME="Lab_2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Lab_2" RUN_TARGET_NAME="Lab_2">
@@ -87,41 +78,94 @@
       <workItem from="1584919890210" duration="1875000" />
       <workItem from="1585039622826" duration="21000" />
       <workItem from="1585076429120" duration="7157000" />
-      <workItem from="1585169811872" duration="3270000" />
+      <workItem from="1585169811872" duration="3356000" />
+      <workItem from="1585246755256" duration="599000" />
+      <workItem from="1585392874375" duration="6790000" />
     </task>
+    <task id="LOCAL-00001" summary="All BSR functions are complete, only transplant_tree is left">
+      <created>1585217503130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585217503130</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="All BSR functions are complete, only transplant_tree is left" />
+    <option name="LAST_COMMIT_MESSAGE" value="All BSR functions are complete, only transplant_tree is left" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1585217503021">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1585217503021" />
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1585087468869">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1585087468869" />
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom" timestamp="1585140800541">
+    <state width="1804" height="300" key="GridCell.Tab.0.bottom" timestamp="1585405827182">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585140800541" />
-    <state width="1804" height="275" key="GridCell.Tab.0.center" timestamp="1585140800540">
+    <state width="1804" height="300" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827182" />
+    <state width="1804" height="300" key="GridCell.Tab.0.center" timestamp="1585405827181">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585140800540" />
-    <state width="1804" height="275" key="GridCell.Tab.0.left" timestamp="1585140800540">
+    <state width="1804" height="300" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827181" />
+    <state width="1804" height="300" key="GridCell.Tab.0.left" timestamp="1585405827181">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585140800540" />
-    <state width="1804" height="275" key="GridCell.Tab.0.right" timestamp="1585140800541">
+    <state width="1804" height="300" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827181" />
+    <state width="1804" height="300" key="GridCell.Tab.0.right" timestamp="1585405827182">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585140800541" />
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585211599361">
+    <state width="1804" height="300" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827182" />
+    <state width="1804" height="340" key="GridCell.Tab.1.bottom" timestamp="1585405571179">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1585211599361" />
+    <state width="1804" height="340" key="GridCell.Tab.1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
+    <state width="1804" height="340" key="GridCell.Tab.1.center" timestamp="1585405571179">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="340" key="GridCell.Tab.1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
+    <state width="1804" height="340" key="GridCell.Tab.1.left" timestamp="1585405571179">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="340" key="GridCell.Tab.1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
+    <state width="1804" height="340" key="GridCell.Tab.1.right" timestamp="1585405571179">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="340" key="GridCell.Tab.1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585392879816">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1585392879816" />
+    <state x="739" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1585404144210">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="739" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1585404144210" />
     <state x="659" y="252" key="run.anything.popup" timestamp="1585211876485">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="659" y="252" key="run.anything.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1585211876485" />
+    <state x="658" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1585393181441">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="658" y="259" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053@70.27.1850.1053" timestamp="1585393181441" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

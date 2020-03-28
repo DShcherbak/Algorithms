@@ -84,10 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Node.cpp">
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.h">
 			<Option target="Lab_2"/>
 		</Unit>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Node.h">
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.hpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.h">
