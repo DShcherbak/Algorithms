@@ -9,65 +9,56 @@ int randomInt(int begin, int end) {
 
 template <class T>
 Binary_Search_Tree<T>::~Binary_Search_Tree(){
-    TreeInterface<T>::delete_subtree(head);
+    TreeInterface<T>::delete_subtree(root);
 }
+
+
 
 template <class T>
 void Binary_Search_Tree<T>::insert_element(const T& new_elem){
-    Node<T>* cur = head;
+    Node<T>* cur = root;
+    auto prev = cur;
     auto new_node = new Node<T>(new_elem);
-    while(cur){
-        if(cur->value == new_elem){
-            if(!cur->left){
-                cur->left = new_node;
-                new_node->parent = cur;
-                return;
-            }
-            else if(!cur->right){
-                cur->right = new_node;
-                new_node->parent = cur;
-                return;
-            }
-            else{
-                int ran = randomInt(0,1);
-                if(ran)
+    while(cur) {
+        prev = cur;
+        if (cur->value == new_elem) {
+            if (!cur->left)
+                cur = cur->left;
+            else if (!cur->right)
+                cur = cur->right;
+            else {
+                int ran = randomInt(0, 1);
+                if (ran)
                     cur = cur->left;
                 else
                     cur = cur->right;
             }
-        }else if(cur->value < new_elem){
-            if(!cur->right){
-                cur->right = new_node;
-                new_node->parent = cur;
-                return;
-            }
-            else
-                cur = cur->right;
-        }else{
-            if(!cur->left){
-                cur->left = new_node;
-                new_node->parent = cur;
-                return;
-            }
-            else
-                cur = cur->left;
-        }
+        } else if (cur->value < new_elem)
+            cur = cur->right;
+        else
+            cur = cur->left;
     }
-    if(cur == head)
-        head = new_node;
-} //for now BST
+    new_node->parent = prev;
+    if(cur == root)
+        root = new_node;
+    else if(new_node->value < prev->value)
+        prev->left = new_node;
+    else
+        prev->right = new_node;
+
+}
 
 template <class T>
 void Binary_Search_Tree<T>::print_tree(){
-    if(!head)
+    if(!root)
         std::cout << "Tree is empty!\n";
     else
-        TreeInterface<T>::print_node(head);
+        TreeInterface<T>::print_node(root);
 }
 
 template <class T>
 bool Binary_Search_Tree<T>::find_element(const T& elem){
-    return TreeInterface<T>::find_node(head, elem);
+    return TreeInterface<T>::find_node(root, elem);
 }
 
 
@@ -92,7 +83,7 @@ void Binary_Search_Tree<T>::delete_node(Node<T>* cur){
     if(new_cur)
         new_cur->parent = cur->parent;
     if(!cur->parent)
-        head = new_cur;
+        root = new_cur;
     else if(cur->parent->left == cur)
         cur->parent->left = new_cur;
     else
@@ -103,7 +94,7 @@ void Binary_Search_Tree<T>::delete_node(Node<T>* cur){
 template <class T>
 void Binary_Search_Tree<T>::transplant_tree(Node<T>* old_node, Node<T>* new_node){
     if(!old_node->parent)
-        head = new_node;
+        root = new_node;
     else if(old_node->parent->left == old_node)
         old_node->parent->left = new_node;
     else
@@ -124,7 +115,7 @@ Node<T>* Binary_Search_Tree<T>::minimum(Node<T>* cur){
 
 template <class T>
 void Binary_Search_Tree<T>::delete_element(const T& elem){
-    Node<T>* cur = head;
+    Node<T>* cur = root;
     while(cur){
         if(cur->value == elem){
             delete_node(cur);

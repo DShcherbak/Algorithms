@@ -96,6 +96,9 @@
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.hpp">
 			<Option target="Lab_2"/>
 		</Unit>
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Tree.h">
+			<Option target="Lab_2"/>
+		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp">
 			<Option target="Lab_2"/>
 		</Unit>

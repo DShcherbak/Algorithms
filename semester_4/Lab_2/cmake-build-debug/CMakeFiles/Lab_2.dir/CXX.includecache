@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.h
+Tree.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Tree.h
 random
 -
 Binary_Search_Tree.hpp
@@ -15,12 +17,20 @@ Binary_Search_Tree.hpp
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.hpp
 
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.h
-Binary_Search_Tree.h
-/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.h
+Tree.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Tree.h
 Red_Black_Tree.hpp
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.hpp
 
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.hpp
+Red_Black_Tree.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.h
+
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Tree.h
+iostream
+-
+vector
+-
 
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp
 iostream
@@ -29,6 +39,8 @@ Binary_Search_Tree.h
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.h
 Red_Black_Tree.h
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.h
+Tree.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Tree.h
 cassert
 -
 

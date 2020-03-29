@@ -5,5 +5,6 @@ CMakeFiles/Lab_2.dir/main.cpp.o: ../Binary_Search_Tree.h
 CMakeFiles/Lab_2.dir/main.cpp.o: ../Binary_Search_Tree.hpp
 CMakeFiles/Lab_2.dir/main.cpp.o: ../Red_Black_Tree.h
 CMakeFiles/Lab_2.dir/main.cpp.o: ../Red_Black_Tree.hpp
+CMakeFiles/Lab_2.dir/main.cpp.o: ../Tree.h
 CMakeFiles/Lab_2.dir/main.cpp.o: ../main.cpp
 

@@ -16,6 +16,8 @@ struct Node {
     explicit Node(T _value){
         value = _value;
     }
+
+    Node() = default;
 };
 
 template <class T>

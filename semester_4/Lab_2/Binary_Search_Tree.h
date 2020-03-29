@@ -11,7 +11,7 @@ using namespace std;
 template <class T>
 class Binary_Search_Tree : private TreeInterface<T>{
 private:
-    Node<T>* head;
+    Node<T>* root;
 
     void delete_node(Node<T>* cur);
 

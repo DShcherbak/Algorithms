@@ -12,20 +12,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec3d455-1700-4215-9b3d-e6a3ad2065af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Binary_Search_Tree.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Binary_Search_Tree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binary_Search_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Binary_Search_Tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Binary_Search_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Binary_Search_Tree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Red_Black_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Red_Black_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +86,7 @@
       <workItem from="1585076429120" duration="7157000" />
       <workItem from="1585169811872" duration="3356000" />
       <workItem from="1585246755256" duration="599000" />
-      <workItem from="1585392874375" duration="6790000" />
+      <workItem from="1585392874375" duration="27638000" />
     </task>
     <task id="LOCAL-00001" summary="All BSR functions are complete, only transplant_tree is left">
       <created>1585217503130</created>
@@ -89,7 +95,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585217503130</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="BST done and tested, RBT initiated&#10;&#10;Binary-Search tree class is implemented and tested, Red-Black Tree is going to be a subclass, inherited from BST">
+      <created>1585405954583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1585405954583</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class">
+      <created>1585427439238</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585427439238</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,49 +117,51 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="All BSR functions are complete, only transplant_tree is left" />
-    <option name="LAST_COMMIT_MESSAGE" value="All BSR functions are complete, only transplant_tree is left" />
+    <MESSAGE value="BST done and tested, RBT initiated&#10;&#10;Binary-Search tree class is implemented and tested, Red-Black Tree is going to be a subclass, inherited from BST" />
+    <MESSAGE value="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class" />
+    <option name="LAST_COMMIT_MESSAGE" value="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1585217503021">
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1585427439193">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1585217503021" />
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1585427439193" />
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1585087468869">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1585087468869" />
-    <state width="1804" height="300" key="GridCell.Tab.0.bottom" timestamp="1585405827182">
+    <state width="1804" height="455" key="GridCell.Tab.0.bottom" timestamp="1585439964802">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="300" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827182" />
-    <state width="1804" height="300" key="GridCell.Tab.0.center" timestamp="1585405827181">
+    <state width="1804" height="455" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964802" />
+    <state width="1804" height="455" key="GridCell.Tab.0.center" timestamp="1585439964801">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="300" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827181" />
-    <state width="1804" height="300" key="GridCell.Tab.0.left" timestamp="1585405827181">
+    <state width="1804" height="455" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
+    <state width="1804" height="455" key="GridCell.Tab.0.left" timestamp="1585439964801">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="300" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827181" />
-    <state width="1804" height="300" key="GridCell.Tab.0.right" timestamp="1585405827182">
+    <state width="1804" height="455" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
+    <state width="1804" height="455" key="GridCell.Tab.0.right" timestamp="1585439964801">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="300" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585405827182" />
-    <state width="1804" height="340" key="GridCell.Tab.1.bottom" timestamp="1585405571179">
+    <state width="1804" height="455" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
+    <state width="1804" height="340" key="GridCell.Tab.1.bottom" timestamp="1585439741991">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
-    <state width="1804" height="340" key="GridCell.Tab.1.center" timestamp="1585405571179">
+    <state width="1804" height="340" key="GridCell.Tab.1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
+    <state width="1804" height="340" key="GridCell.Tab.1.center" timestamp="1585439741991">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
-    <state width="1804" height="340" key="GridCell.Tab.1.left" timestamp="1585405571179">
+    <state width="1804" height="340" key="GridCell.Tab.1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
+    <state width="1804" height="340" key="GridCell.Tab.1.left" timestamp="1585439741991">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
-    <state width="1804" height="340" key="GridCell.Tab.1.right" timestamp="1585405571179">
+    <state width="1804" height="340" key="GridCell.Tab.1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
+    <state width="1804" height="340" key="GridCell.Tab.1.right" timestamp="1585439741991">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585405571179" />
+    <state width="1804" height="340" key="GridCell.Tab.1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
     <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585392879816">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -161,11 +183,21 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>29</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/Red_Black_Tree.hpp</url>
+          <line>33</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Binary_Search_Tree.hpp</url>
+          <line>17</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="new_elem" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
