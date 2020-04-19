@@ -1,28 +1,38 @@
-
-#include "Red_Black_Tree.h"
+#include <cassert>
 
 using namespace std;
 
 
 template <class T>
-Red_Black_Tree<T>::Red_Black_Tree(){
-    nil = new RBNode<T>();
+Order_Statistic_Tree<T>::Order_Statistic_Tree(){
+    nil = new OSNode<T>();
+    nil->size = 0;
     root = nil;
 }
 
-
 template <class T>
-Red_Black_Tree<T>::~Red_Black_Tree(){
+Order_Statistic_Tree<T>::~Order_Statistic_Tree(){
     if(root == nil)
         delete root;
     else{
-        Red_Black_Tree<T>::delete_subtree(root);
+        Order_Statistic_Tree<T>::delete_subtree(root);
         delete nil;
     }
 }
 
 template <class T>
-void Red_Black_Tree<T>::delete_subtree(RBNode<T>* cur) {
+OSNode<T>* Order_Statistic_Tree<T>::get_node(OSNode<T> *cur, int number) {
+    int cur_number = cur->left->size + 1;
+    if(cur_number == number)
+        return cur;
+    else if(cur_number > number)
+        return get_node(cur->left, number);
+    else
+        return get_node(cur->right, number-cur_number);
+}
+
+template <class T>
+void Order_Statistic_Tree<T>::delete_subtree(OSNode<T>* cur) {
     if(cur == nil)
         return;
     delete_subtree(cur->left);
@@ -31,13 +41,14 @@ void Red_Black_Tree<T>::delete_subtree(RBNode<T>* cur) {
 }
 
 template <class T>
-void Red_Black_Tree<T>::insert_element(const T& new_elem){
-    RBNode<T>* cur = root;
+void Order_Statistic_Tree<T>::insert_element(const T& new_elem){
+    OSNode<T>* cur = root;
     auto prev = cur;
-    auto new_node = new RBNode<T>(new_elem);
+    auto new_node = new OSNode<T>(new_elem);
     new_node->left = nil;
     new_node->right = nil;
     while(cur != nil){
+        cur->size++;
         prev = cur;
         if(cur->value == new_elem){
             if(cur->left == nil)
@@ -71,7 +82,7 @@ void Red_Black_Tree<T>::insert_element(const T& new_elem){
 } //for now BST
 
 template <class T>
-void Red_Black_Tree<T>::insert_fix(RBNode<T>* cur){
+void Order_Statistic_Tree<T>::insert_fix(OSNode<T>* cur){
     while(!cur->parent->black){
         if(cur->parent == cur->parent->parent->left){
             auto uncle = cur->parent->parent->right;
@@ -110,10 +121,9 @@ void Red_Black_Tree<T>::insert_fix(RBNode<T>* cur){
     root->black = true;
 }
 
-
 template <class T>
-void Red_Black_Tree<T>::delete_fix(RBNode<T>* cur) {
-    RBNode<T>* brother;
+void Order_Statistic_Tree<T>::delete_fix(OSNode<T>* cur) {
+    OSNode<T>* brother;
     while(cur != root && cur->black){
         if(cur == cur->parent->left){
             brother= cur->parent->right;
@@ -171,20 +181,19 @@ void Red_Black_Tree<T>::delete_fix(RBNode<T>* cur) {
     cur->black = true;
 }
 
-
 template <class T>
-void Red_Black_Tree<T>::print_tree(){
+void Order_Statistic_Tree<T>::print_tree(){
     if(root == nil)
         std::cout << "Tree is empty!\n";
     else
-        Red_Black_Tree<T>::print_node(root);
+        Order_Statistic_Tree<T>::print_node(root);
     cout << "-------------------------------" << endl;
 }
 
 template <class T>
-void Red_Black_Tree<T>::print_node(RBNode<T>* cur, int depth, bool left, vector<bool> draw) {
+void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, vector<bool> draw) {
     if(cur == nil)
-            return;
+        return;
     vector <bool> new_draw = draw;
     new_draw.push_back(false);
     if(depth > 0) new_draw[depth-1] = left;
@@ -195,9 +204,9 @@ void Red_Black_Tree<T>::print_node(RBNode<T>* cur, int depth, bool left, vector<
     }
     if(depth > 0){
         if(cur->black)
-            cout << "|B--";
+            cout << "B" << "(" << cur->size << ")";
         else
-            cout << "|R--";
+            cout << "R" << "(" << cur->size << ")";
     }
     cout << cur->value << std::endl;
 
@@ -208,25 +217,24 @@ void Red_Black_Tree<T>::print_node(RBNode<T>* cur, int depth, bool left, vector<
 }
 
 template <class T>
-bool Red_Black_Tree<T>::find_element(const T& elem){
-    return Red_Black_Tree<T>::find_node(root, elem);
+bool Order_Statistic_Tree<T>::find_element(const T& elem){
+    return Order_Statistic_Tree<T>::find_node(root, elem);
 }
 
-
-
-
 template <class T>
-void Red_Black_Tree<T>::delete_node(RBNode<T>* cur) {
-    RBNode<T>* alt_cur = cur;
+void Order_Statistic_Tree<T>::delete_node(OSNode<T>* cur) {
+    OSNode<T>* alt_cur = cur;
     bool is_alt_cur_black = alt_cur->black;
-    RBNode<T>* new_cur;
+    OSNode<T>* new_cur;
     if(cur->left == nil){
         new_cur = cur->right;
         transplant_tree(cur, cur->right);
+        recount_size(cur->right);
     }
     else if(cur->right == nil){
         new_cur = cur->left;
         transplant_tree(cur, cur->left);
+        recount_size(cur->left);
     }
     else{
         alt_cur = minimum(cur->right);
@@ -244,6 +252,8 @@ void Red_Black_Tree<T>::delete_node(RBNode<T>* cur) {
         alt_cur->left->parent = alt_cur;
         alt_cur->black = cur->black;
     }
+    recount_size(new_cur);
+
     delete cur;
     if(is_alt_cur_black)
         delete_fix(new_cur);
@@ -251,39 +261,9 @@ void Red_Black_Tree<T>::delete_node(RBNode<T>* cur) {
 
 
 }
-/*
-template <class T>
-void Red_Black_Tree<T>::delete_node(RBNode<T>* cur){
-    RBNode<T>* new_cur = nullptr;
-    
-    if(cur->left == nil)
-        new_cur = cur->right;
-    else if(cur->right == nil)
-        new_cur = cur->left;
-    else{
-        new_cur = minimum(cur->right);
-        if(new_cur->parent != cur){
-            transplant_tree(new_cur, new_cur->right);
-            new_cur->right = cur->right;
-            new_cur->right->parent = new_cur;
-        }
-        new_cur->left = cur->left;
-        new_cur->left->parent = new_cur;
-    }
 
-    if(new_cur != nil)
-        new_cur->parent = cur->parent;
-    if(cur->parent == nil)
-        root = new_cur;
-    else if(cur->parent->left == cur)
-        cur->parent->left = new_cur;
-    else
-        cur->parent->right = new_cur;
-    delete cur;
-}
-*/
 template <class T>
-void Red_Black_Tree<T>::transplant_tree(RBNode<T>* old_node, RBNode<T>* new_node){
+void Order_Statistic_Tree<T>::transplant_tree(OSNode<T>* old_node, OSNode<T>* new_node){
     if(old_node->parent == nil)
         root = new_node;
     else if(old_node->parent->left == old_node)
@@ -295,15 +275,25 @@ void Red_Black_Tree<T>::transplant_tree(RBNode<T>* old_node, RBNode<T>* new_node
 }
 
 template <class T>
-RBNode<T>* Red_Black_Tree<T>::minimum(RBNode<T>* cur){
+void Order_Statistic_Tree<T>::recount_size(OSNode<T>* cur){
+    if(cur != nil)
+        cur->size = cur->left->size + cur->right->size + 1;
+    if(cur->parent != nil)
+        recount_size(cur->parent);
+
+}
+
+
+template <class T>
+OSNode<T>* Order_Statistic_Tree<T>::minimum(OSNode<T>* cur){
     while(cur->left != nil)
         cur = cur->left;
     return cur;
 }
 
 template <class T>
-void Red_Black_Tree<T>::delete_element(const T& elem){
-    RBNode<T>* cur = root;
+void Order_Statistic_Tree<T>::delete_element(const T& elem){
+    OSNode<T>* cur = root;
     while(cur != nil){
         if(cur->value == elem){
             delete_node(cur);
@@ -311,19 +301,21 @@ void Red_Black_Tree<T>::delete_element(const T& elem){
         }else if(cur->value < elem){
             if(!cur->right)
                 return;
-            else
+            else{
                 cur = cur->right;
+            }
         }else{
             if(cur->left == nil)
                 return;
-            else
+            else{
                 cur = cur->left;
+            }
         }
     }
 }
 
 template<class T>
-void Red_Black_Tree<T>::left_rotate(RBNode<T> *cur) {
+void Order_Statistic_Tree<T>::left_rotate(OSNode<T> *cur) {
     if(cur->right == nil)
         return;
     auto next = cur->right;
@@ -340,10 +332,12 @@ void Red_Black_Tree<T>::left_rotate(RBNode<T> *cur) {
 
     next->left = cur;
     cur->parent = next;
+    next->size = cur->size;
+    cur->size = cur->left->size + cur->right->size + 1;
 }
 
 template<class T>
-void Red_Black_Tree<T>::right_rotate(RBNode<T> *cur) {
+void Order_Statistic_Tree<T>::right_rotate(OSNode<T> *cur) {
     if(cur->left == nil)
         return;
     auto next = cur->left;
@@ -360,11 +354,32 @@ void Red_Black_Tree<T>::right_rotate(RBNode<T> *cur) {
 
     next->right = cur;
     cur->parent = next;
+
+    next->size = cur->size;
+    cur->size = cur->left->size + cur->right->size + 1;
 }
 
 template<class T>
-template<class N>
-bool Red_Black_Tree<T>::find_node(RBNode<T> *cur, const N& value) {
+T Order_Statistic_Tree<T>::get_element(int number) {
+    assert(number <= root->size);
+    auto node = get_node(root, number);
+    return node->value;
+}
+
+template<class T>
+int Order_Statistic_Tree<T>::get_rank(OSNode<T> *cur) {
+    int rank = cur->left->size + 1;
+    auto next = cur;
+    while(next != root){
+        if(next == next->parent->right)
+            rank = rank + next->parent->left->size + 1;
+        next = next->parent;
+    }
+    return rank;
+}
+
+template<class T>
+bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const T &value) {
     if(cur == nil)
         return false;
     if(cur->value == value)
@@ -374,5 +389,6 @@ bool Red_Black_Tree<T>::find_node(RBNode<T> *cur, const N& value) {
     else
         return find_node(cur->right, value);
 }
+
 
 

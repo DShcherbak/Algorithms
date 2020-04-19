@@ -12,12 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ec3d455-1700-4215-9b3d-e6a3ad2065af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Order_Statistic_Tree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Order_Statistic_Tree.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/.idea/testing.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testing/testing.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/Folder.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/Folder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/hash_table.h" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/hash_table.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Lab_1/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../Lab_1/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binary_Search_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Binary_Search_Tree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Binary_Search_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Binary_Search_Tree.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Red_Black_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Red_Black_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Red_Black_Tree.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" afterDir="false" />
@@ -28,10 +34,10 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +63,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Lab_1/main.cpp" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -86,7 +92,16 @@
       <workItem from="1585076429120" duration="7157000" />
       <workItem from="1585169811872" duration="3356000" />
       <workItem from="1585246755256" duration="599000" />
-      <workItem from="1585392874375" duration="27638000" />
+      <workItem from="1585392874375" duration="28334000" />
+      <workItem from="1585480754035" duration="599000" />
+      <workItem from="1585923901266" duration="27000" />
+      <workItem from="1586000654385" duration="599000" />
+      <workItem from="1586177633220" duration="5000" />
+      <workItem from="1587143580677" duration="27923000" />
+      <workItem from="1587289799951" duration="4000" />
+      <workItem from="1587291891027" duration="2771000" />
+      <workItem from="1587295122925" duration="4390000" />
+      <workItem from="1587299903743" duration="2140000" />
     </task>
     <task id="LOCAL-00001" summary="All BSR functions are complete, only transplant_tree is left">
       <created>1585217503130</created>
@@ -109,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585427439238</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Insertion done x2&#10;&#10;RB insertion is implemented due to RB rules. BST insertion is modified (only structure, works same)">
+      <created>1585440127219</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585440127219</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,53 +141,202 @@
     <MESSAGE value="All BSR functions are complete, only transplant_tree is left" />
     <MESSAGE value="BST done and tested, RBT initiated&#10;&#10;Binary-Search tree class is implemented and tested, Red-Black Tree is going to be a subclass, inherited from BST" />
     <MESSAGE value="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class" />
-    <option name="LAST_COMMIT_MESSAGE" value="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class" />
+    <MESSAGE value="Insertion done x2&#10;&#10;RB insertion is implemented due to RB rules. BST insertion is modified (only structure, works same)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insertion done x2&#10;&#10;RB insertion is implemented due to RB rules. BST insertion is modified (only structure, works same)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1585427439193">
+    <state x="590" y="215" width="800" height="684" key="#New_File_Extensions" timestamp="1587212616596">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1585427439193" />
-    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1585087468869">
+    <state x="590" y="215" width="800" height="684" key="#New_File_Extensions/70.27.1850.1053@70.27.1850.1053" timestamp="1587212616596" />
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1585440127080">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1585087468869" />
-    <state width="1804" height="455" key="GridCell.Tab.0.bottom" timestamp="1585439964802">
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1585440127080" />
+    <state width="473" height="568" key="DebuggerActiveHint" timestamp="1587294122041">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="455" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964802" />
-    <state width="1804" height="455" key="GridCell.Tab.0.center" timestamp="1585439964801">
+    <state width="473" height="568" key="DebuggerActiveHint/70.27.1850.1053@70.27.1850.1053" timestamp="1587294122041" />
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1587301943675">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="455" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
-    <state width="1804" height="455" key="GridCell.Tab.0.left" timestamp="1585439964801">
+    <state x="778" y="311" width="424" height="491" key="FileChooserDialogImpl/70.27.1850.1053@70.27.1850.1053" timestamp="1587301943675" />
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.bottom" timestamp="1587296930655">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="455" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
-    <state width="1804" height="455" key="GridCell.Tab.0.right" timestamp="1585439964801">
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587296930655" />
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.center" timestamp="1587296930654">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="455" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585439964801" />
-    <state width="1804" height="340" key="GridCell.Tab.1.bottom" timestamp="1585439741991">
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587296930654" />
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.left" timestamp="1587296930653">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
-    <state width="1804" height="340" key="GridCell.Tab.1.center" timestamp="1585439741991">
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587296930653" />
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.right" timestamp="1587296930654">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
-    <state width="1804" height="340" key="GridCell.Tab.1.left" timestamp="1585439741991">
+    <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587296930654" />
+    <state width="656" height="893" key="GridCell.Tab.0.bottom" timestamp="1587300017049">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
-    <state width="1804" height="340" key="GridCell.Tab.1.right" timestamp="1585439741991">
+    <state width="656" height="893" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587300017049" />
+    <state width="656" height="893" key="GridCell.Tab.0.center" timestamp="1587300017049">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="340" key="GridCell.Tab.1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1585439741991" />
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1585392879816">
+    <state width="656" height="893" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587300017049" />
+    <state width="656" height="893" key="GridCell.Tab.0.left" timestamp="1587300017048">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1585392879816" />
+    <state width="656" height="893" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587300017048" />
+    <state width="656" height="893" key="GridCell.Tab.0.right" timestamp="1587300017049">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state width="656" height="893" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587300017049" />
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.bottom" timestamp="1587299860130">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587299860130" />
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.center" timestamp="1587299860129">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587299860129" />
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.left" timestamp="1587299860129">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587299860129" />
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.right" timestamp="1587299860130">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587299860130" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.bottom" timestamp="1587296983830">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983830" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.center" timestamp="1587296983829">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983829" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.left" timestamp="1587296983829">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983829" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.right" timestamp="1587296983829">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.2.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983829" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.bottom" timestamp="1587296983819">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983819" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.center" timestamp="1587296983817">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983817" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.left" timestamp="1587296983816">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983816" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.right" timestamp="1587296983818">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.3.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587296983818" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.bottom" timestamp="1587296981571">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587296981571" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.center" timestamp="1587296981570">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587296981570" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.left" timestamp="1587296981569">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587296981569" />
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.right" timestamp="1587296981571">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="568" key="GridCell.Tab.4.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587296981571" />
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1587295123789">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1587295123789" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-1" timestamp="1587295936201">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-1/70.27.1850.1053@70.27.1850.1053" timestamp="1587295936201" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-10" timestamp="1587253629972">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-10/70.27.1850.1053@70.27.1850.1053" timestamp="1587253629972" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-11" timestamp="1587253629972">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-11/70.27.1850.1053@70.27.1850.1053" timestamp="1587253629972" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-12" timestamp="1587253629972">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-12/70.27.1850.1053@70.27.1850.1053" timestamp="1587253629972" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-13" timestamp="1587253629972">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-13/70.27.1850.1053@70.27.1850.1053" timestamp="1587253629972" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-14" timestamp="1587253855478">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-14/70.27.1850.1053@70.27.1850.1053" timestamp="1587253855478" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-15" timestamp="1587254009462">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-15/70.27.1850.1053@70.27.1850.1053" timestamp="1587254009462" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-16" timestamp="1587254744078">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-16/70.27.1850.1053@70.27.1850.1053" timestamp="1587254744078" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-17" timestamp="1587258101340">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-17/70.27.1850.1053@70.27.1850.1053" timestamp="1587258101340" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-18" timestamp="1587258101340">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-18/70.27.1850.1053@70.27.1850.1053" timestamp="1587258101340" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-19" timestamp="1587259074881">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-19/70.27.1850.1053@70.27.1850.1053" timestamp="1587259074881" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-2" timestamp="1587295936201">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-2/70.27.1850.1053@70.27.1850.1053" timestamp="1587295936201" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-3" timestamp="1587296915514">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-3/70.27.1850.1053@70.27.1850.1053" timestamp="1587296915514" />
+    <state x="1026" y="195" width="457" height="689" key="dock-window-4" timestamp="1587296915514">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="457" height="689" key="dock-window-4/70.27.1850.1053@70.27.1850.1053" timestamp="1587296915514" />
+    <state x="1048" y="419" width="456" height="661" key="dock-window-5" timestamp="1587296925787">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1048" y="419" width="456" height="661" key="dock-window-5/70.27.1850.1053@70.27.1850.1053" timestamp="1587296925787" />
+    <state x="110" y="211" width="455" height="633" key="dock-window-6" timestamp="1587296931063">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="110" y="211" width="455" height="633" key="dock-window-6/70.27.1850.1053@70.27.1850.1053" timestamp="1587296931063" />
+    <state x="804" y="163" width="454" height="605" key="dock-window-7" timestamp="1587297026039">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="804" y="163" width="454" height="605" key="dock-window-7/70.27.1850.1053@70.27.1850.1053" timestamp="1587297026039" />
+    <state x="1026" y="195" width="457" height="689" key="dock-window-8" timestamp="1587297026039">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1026" y="195" width="457" height="689" key="dock-window-8/70.27.1850.1053@70.27.1850.1053" timestamp="1587297026039" />
+    <state x="1237" y="27" width="115" height="740" key="dock-window-9" timestamp="1587213449677">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="1237" y="27" width="115" height="740" key="dock-window-9/70.27.1850.1053@70.27.1850.1053" timestamp="1587213449677" />
     <state x="739" y="197" width="501" height="720" key="refactoring.ChangeSignatureDialog" timestamp="1585404144210">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -183,14 +354,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Red_Black_Tree.hpp</url>
-          <line>33</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Binary_Search_Tree.hpp</url>
           <line>17</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Red_Black_Tree.hpp</url>
+          <line>115</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.cpp</url>
+          <line>113</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Order_Statistic_Tree.hpp</url>
+          <line>298</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

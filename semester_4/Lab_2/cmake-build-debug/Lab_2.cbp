@@ -90,6 +90,12 @@
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Binary_Search_Tree.hpp">
 			<Option target="Lab_2"/>
 		</Unit>
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Order_Statistic_Tree.h">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Order_Statistic_Tree.hpp">
+			<Option target="Lab_2"/>
+		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/Red_Black_Tree.h">
 			<Option target="Lab_2"/>
 		</Unit>
@@ -100,6 +106,12 @@
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/main.cpp">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/sqlite3pp-master/headeronly_src/sqlite3pp.h">
+			<Option target="Lab_2"/>
+		</Unit>
+		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp">
 			<Option target="Lab_2"/>
 		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/CMakeLists.txt">

@@ -123,6 +123,33 @@ Lab_2/fast:
 	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/build
 .PHONY : Lab_2/fast
 
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.o: home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.o
+
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.o
+
+# target to build an object file
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.o:
+	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.o
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.o
+
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.i: home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.i
+
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.i
+
+# target to preprocess a source file
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.i:
+	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.i
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.i
+
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.s: home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.s
+
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.s
+
+# target to generate assembly for a file
+home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.s:
+	$(MAKE) -f CMakeFiles/Lab_2.dir/build.make CMakeFiles/Lab_2.dir/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.s
+.PHONY : home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Lab_2"
 	@echo "... edit_cache"
+	@echo "... home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.o"
+	@echo "... home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.i"
+	@echo "... home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

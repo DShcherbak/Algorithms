@@ -42,7 +42,12 @@ private:
     void left_rotate(RBNode<T>* cur);
     void right_rotate(RBNode<T> *cur);
 
-    void fix_tree(RBNode<T> *cur);
+    void insert_fix(RBNode<T> *cur);
+    void delete_fix(RBNode<T> *cur);
+
+    template <class N>
+    bool find_node(RBNode<T>* cur, const N& value);
+
 public:
 
     Red_Black_Tree();
@@ -54,6 +59,7 @@ public:
     bool find_element(const T& elem);
 
     void delete_element(const T& elem);
+
 
     void print_tree();
 };

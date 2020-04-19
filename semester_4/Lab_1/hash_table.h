@@ -1,7 +1,7 @@
 #ifndef LAB_1_HASH_TABLE_H
 #define LAB_1_HASH_TABLE_H
 
-#include "Folder.h"
+#include "../Folder.h"
 #include <map>
 
 

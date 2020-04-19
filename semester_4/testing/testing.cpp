@@ -1,22 +1,16 @@
-#include "hash_table.h"
+//
+// Created by sadoffnick on 19.04.20.
+//
 #include "../sqlite3pp-master/headeronly_src/sqlite3pp.h"
 #include "../Folder.h"
 #include <iostream>
 #include <vector>
 #include <set>
 #include <cassert>
-#include <random>
 
 using namespace std;
 
 const char* db_file = "lab1.db";
-
-int randomInt(int begin, int end) {
-    std::random_device rd;
-    std::mt19937_64 gen(rd());
-    std::uniform_int_distribution<> dis(begin, end);
-    return dis(gen);
-}
 
 vector<Folder*> read_folders_from_database(const string &inc){
     vector <Folder*> fold = {};
@@ -59,35 +53,16 @@ void print_folders(const vector <Folder*> &included, const vector <Folder*> &exc
     }
 }
 
-
-bool test_for_correct_folders(HashTable<Folder*>* HT, const vector<Folder*>& included, const vector<Folder*>& excluded, const set<Folder*> &deleted = {}){
+template <class T>
+bool test_for_correct_folders(T* Struct, const vector<Folder*>& included, const vector<Folder*>& excluded, const set<Folder*> &deleted = {}){
     for(auto fold : included)
-        if(!deleted.count(fold)  && !HT->find_element(fold))
+        if(!deleted.count(fold)  && !Struct->find_element(fold))
             return false;
-        else if(deleted.count(fold) && HT->find_element(fold))
+        else if(deleted.count(fold) && Struct->find_element(fold))
             return false;
     for(auto fold : excluded)
-        if(HT->find_element(fold))
+        if(Struct->find_element(fold))
             return false;
     return true;
 }
 
-int main() {
-
-    vector <Folder*> included = read_folders_from_database("included");
-    vector <Folder*> excluded = read_folders_from_database("excluded");
-    //print_folders(included, excluded);
-    auto HT = new HashTable<Folder*>;
-    for(auto & fold : included)
-        HT->insert_element(fold);
-    assert(test_for_correct_folders(HT, included, excluded) && cout << "Test for insertion passed.\nTest for search passed\n");
-    set <Folder*> deleted;
-    for(auto & fold : included){
-        if(randomInt(1,6) == 6){
-            HT->delete_element(fold);
-            deleted.insert(fold);
-        }
-    }
-    assert(test_for_correct_folders(HT, included, excluded, deleted) && cout << "Test for deletion passed.\n");
-    return 0;
-}
