@@ -111,9 +111,6 @@
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/sqlite3pp-master/headeronly_src/sqlite3pp.h">
 			<Option target="Lab_2"/>
 		</Unit>
-		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp">
-			<Option target="Lab_2"/>
-		</Unit>
 		<Unit filename="/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Lab_2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

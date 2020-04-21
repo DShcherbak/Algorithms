@@ -65,8 +65,8 @@ cassert
 -
 ../sqlite3pp-master/headeronly_src/sqlite3pp.h
 /home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/sqlite3pp-master/headeronly_src/sqlite3pp.h
-../testing/testing.cpp
-/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp
+../Folder.h
+/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Folder.h
 vector
 -
 set
@@ -94,19 +94,5 @@ sqlite3pp.ipp
 cstring
 -
 memory
--
-
-/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp
-../sqlite3pp-master/headeronly_src/sqlite3pp.h
-/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/sqlite3pp-master/headeronly_src/sqlite3pp.h
-../Folder.h
-/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/Folder.h
-iostream
--
-vector
--
-set
--
-cassert
 -
 

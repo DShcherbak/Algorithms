@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/Lab_2.dir/main.cpp.o CMakeFiles/Lab_2.dir/home/sadoffnick/Documents/University/STUDY/Algorithms/semester_4/testing/testing.cpp.o  -o Lab_2 
+/usr/bin/c++  -g   CMakeFiles/Lab_2.dir/main.cpp.o  -o Lab_2 -lsqlite3 
