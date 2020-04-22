@@ -1,4 +1,7 @@
 #include <cassert>
+#include "../Folder.h"
+#include "Order_Statistic_Tree.h"
+
 
 using namespace std;
 
@@ -21,14 +24,14 @@ Order_Statistic_Tree<T>::~Order_Statistic_Tree(){
 }
 
 template <class T>
-OSNode<T>* Order_Statistic_Tree<T>::get_node(OSNode<T> *cur, int number) {
+OSNode<T>* Order_Statistic_Tree<T>::get_node_by_number(OSNode<T> *cur, int number) {
     int cur_number = cur->left->size + 1;
     if(cur_number == number)
         return cur;
     else if(cur_number > number)
-        return get_node(cur->left, number);
+        return get_node_by_number(cur->left, number);
     else
-        return get_node(cur->right, number-cur_number);
+        return get_node_by_number(cur->right, number - cur_number);
 }
 
 template <class T>
@@ -359,10 +362,21 @@ void Order_Statistic_Tree<T>::right_rotate(OSNode<T> *cur) {
     cur->size = cur->left->size + cur->right->size + 1;
 }
 
-template<class T>
-T Order_Statistic_Tree<T>::get_element(int number) {
-    assert(number <= root->size);
-    auto node = get_node(root, number);
+template<>
+int Order_Statistic_Tree<int>::get_element(int number) {
+    if(number > root->size){
+        return -1;
+    }
+    auto node = get_node_by_number(root, number);
+    return node->value;
+}
+
+template<>
+Folder* Order_Statistic_Tree<Folder*>::get_element(int number) {
+    if(number > root->size){
+        return nullptr;
+    }
+    auto node = get_node_by_number(root, number);
     return node->value;
 }
 
@@ -389,6 +403,35 @@ bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const T &value) {
     else
         return find_node(cur->right, value);
 }
+
+template <class T>
+OSNode<T>* Order_Statistic_Tree<T>::get_node_by_value(OSNode<T>* cur, T value){
+    if(cur == nil)
+        return nullptr;
+    if(cur->value == value)
+        return cur;
+    else if(cur->value > value)
+        return get_node_by_value(cur->left, value);
+    else
+        return get_node_by_value(cur->right, value);
+}
+
+template<class T>
+int Order_Statistic_Tree<T>::get_element_rank(const T& elem) {
+    OSNode<T>* node = get_node_by_value(root, elem);
+    if(node != nullptr){
+        return get_rank(node);
+    }else{
+        return -1;
+    }
+}
+
+template<class T>
+int Order_Statistic_Tree<T>::get_size() {
+    return root->size;
+}
+
+
 
 
 

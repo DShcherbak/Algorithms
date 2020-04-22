@@ -48,11 +48,13 @@ private:
     void insert_fix(OSNode<T> *cur);
     void delete_fix(OSNode<T> *cur);
 
-    OSNode<T>* get_node(OSNode<T>* cur, int number);
+    OSNode<T>* get_node_by_number(OSNode<T>* cur, int number);
+
     int get_rank(OSNode<T>* cur);
     void recount_size(OSNode<T>* cur);
 
     bool find_node(OSNode<T>* cur, const T& value);
+    OSNode<T>* get_node_by_value(OSNode<T>* cur, T value);
 
 public:
 
@@ -62,11 +64,15 @@ public:
 
     T get_element(int number);
 
+    int get_element_rank(const T& elem);
+
     void insert_element(const T& new_elem);
 
     bool find_element(const T& elem);
 
     void delete_element(const T& elem);
+
+    int get_size();
 
 
     void print_tree();

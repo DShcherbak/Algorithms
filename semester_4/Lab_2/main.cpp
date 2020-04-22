@@ -68,6 +68,22 @@ bool test_for_correct_folders(T* Struct, const vector<Folder*>& included, const 
     return true;
 }
 
+template <class T>
+bool test_for_rank_folders(T* Struct, const vector<Folder*>& included, const vector<Folder*>& excluded, const set<Folder*> &deleted = {}){
+    int size = Struct->get_size();
+    for(int i = 1; i <= size; i++){
+        auto fold = Struct->get_element(i);
+        if(deleted.count(fold)  || !Struct->find_element(fold))
+            return false;
+    }
+    for(auto fold : excluded)
+        if(Struct->get_element_rank(fold) != -1)
+            return false;
+    return true;
+}
+
+
+
 
 int main() {
     vector <Folder*> included = read_folders_from_database("included");
@@ -85,5 +101,6 @@ int main() {
         }
     }
     assert(test_for_correct_folders(OST, included, excluded, deleted) && cout << "Test for deletion passed.\n");
+    assert(test_for_rank_folders(OST, included, excluded, deleted) && cout << "Test for ranking passed.\n");
     return 0;
 }

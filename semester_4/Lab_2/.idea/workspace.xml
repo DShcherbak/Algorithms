@@ -13,20 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1ec3d455-1700-4215-9b3d-e6a3ad2065af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab_2.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab_2.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order_Statistic_Tree.h" beforeDir="false" afterPath="$PROJECT_DIR$/Order_Statistic_Tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Order_Statistic_Tree.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Order_Statistic_Tree.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +97,8 @@
       <workItem from="1587291891027" duration="2771000" />
       <workItem from="1587295122925" duration="4390000" />
       <workItem from="1587299903743" duration="3501000" />
-      <workItem from="1587403081112" duration="3170000" />
+      <workItem from="1587403081112" duration="4090000" />
+      <workItem from="1587539640988" duration="2493000" />
     </task>
     <task id="LOCAL-00001" summary="All BSR functions are complete, only transplant_tree is left">
       <created>1585217503130</created>
@@ -146,7 +135,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587305095936</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Lab_2 finished&#10;&#10;Linking problems solved, now lab_2 shows full functionality of a set, need tests for rank in set">
+      <created>1587460725803</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587460725803</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +154,8 @@
     <MESSAGE value="TreeInterface implemented&#10;&#10;Now both BST and future Red-Black Tree class are inherited from TreeInterface class" />
     <MESSAGE value="Insertion done x2&#10;&#10;RB insertion is implemented due to RB rules. BST insertion is modified (only structure, works same)" />
     <MESSAGE value="OST done, linking problems&#10;&#10;Have finished deletion for RBTree, added Node-&gt;size and transformed it into Order_Statistic_Tree&#10;Having some troubles linking, solve them in the next commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="OST done, linking problems&#10;&#10;Have finished deletion for RBTree, added Node-&gt;size and transformed it into Order_Statistic_Tree&#10;Having some troubles linking, solve them in the next commit" />
+    <MESSAGE value="Lab_2 finished&#10;&#10;Linking problems solved, now lab_2 shows full functionality of a set, need tests for rank in set" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab_2 finished&#10;&#10;Linking problems solved, now lab_2 shows full functionality of a set, need tests for rank in set" />
   </component>
   <component name="WindowStateProjectService">
     <state x="590" y="215" width="800" height="684" key="#New_File_Extensions" timestamp="1587212616596">
@@ -169,10 +166,10 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="590" y="215" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1587454869289" />
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1587305095787">
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2" timestamp="1587460725644">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1587305095787" />
+    <state x="610" y="120" width="1026" height="919" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1587460725644" />
     <state width="473" height="568" key="DebuggerActiveHint" timestamp="1587294122041">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -197,22 +194,22 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="110" y="211" width="455" height="596" key="GridCell.Tab.-1.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587296930654" />
-    <state width="416" height="893" key="GridCell.Tab.0.bottom" timestamp="1587455052554">
+    <state width="416" height="591" key="GridCell.Tab.0.bottom" timestamp="1587460753910">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="416" height="893" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587455052554" />
-    <state width="416" height="893" key="GridCell.Tab.0.center" timestamp="1587455052553">
+    <state width="416" height="591" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1587460753910" />
+    <state width="416" height="591" key="GridCell.Tab.0.center" timestamp="1587460753909">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="416" height="893" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587455052553" />
-    <state width="416" height="893" key="GridCell.Tab.0.left" timestamp="1587455052553">
+    <state width="416" height="591" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1587460753909" />
+    <state width="416" height="591" key="GridCell.Tab.0.left" timestamp="1587460753908">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="416" height="893" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587455052553" />
-    <state width="416" height="893" key="GridCell.Tab.0.right" timestamp="1587455052553">
+    <state width="416" height="591" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1587460753908" />
+    <state width="416" height="591" key="GridCell.Tab.0.right" timestamp="1587460753909">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="416" height="893" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587455052553" />
+    <state width="416" height="591" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1587460753909" />
     <state x="1026" y="195" width="486" height="680" key="GridCell.Tab.1.bottom" timestamp="1587299860130">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -281,10 +278,10 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state width="263" height="500" key="HiddenNamespacesPopup/70.27.1850.1053@70.27.1850.1053" timestamp="1587454874809" />
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1587403085056">
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1587539676953">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1587403085056" />
+    <state x="651" y="381" key="com.intellij.ide.util.TipDialog/70.27.1850.1053@70.27.1850.1053" timestamp="1587539676953" />
     <state x="1237" y="27" width="115" height="740" key="dock-window-1" timestamp="1587295936201">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
@@ -389,8 +386,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Order_Statistic_Tree.hpp</url>
-          <line>298</line>
+          <line>301</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Order_Statistic_Tree.hpp</url>
+          <line>17</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Order_Statistic_Tree.hpp</url>
+          <line>398</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Order_Statistic_Tree.hpp</url>
+          <line>399</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
