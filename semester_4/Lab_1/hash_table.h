@@ -2,6 +2,7 @@
 #define LAB_1_HASH_TABLE_H
 
 #include "../Folder.h"
+#include <vector>
 #include <map>
 
 
@@ -24,7 +25,15 @@ template <class T>
 template <class T>
 class HashTable {
 private:
-    map <int, Node<T>*> table;
+
+    vector <vector<Node<T>*>> table;
+    vector <int> a, b, m;
+    int A, B, M;
+
+    int first_level_hash(T elem);
+
+    int second_level_hash(int elem, int first_hash);
+
 public:
     void insert_element(T new_elem);
 
@@ -32,10 +41,10 @@ public:
 
     void delete_element(T);
 
+    void hash_all_elements(vector <T> included);
+
 };
 
-template <class T>
-int hash_element(T elem);
 
 #include "hash_table.hpp"
 #endif //LAB_1_HASH_TABLE_H

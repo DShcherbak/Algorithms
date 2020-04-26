@@ -78,6 +78,7 @@ int main() {
     vector <Folder*> excluded = read_folders_from_database("excluded");
     //print_folders(included, excluded);
     auto HT = new HashTable<Folder*>;
+    HT->hash_all_elements(included);
     for(auto & fold : included)
         HT->insert_element(fold);
     assert(test_for_correct_folders(HT, included, excluded) && cout << "Test for insertion passed.\nTest for search passed\n");

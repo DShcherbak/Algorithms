@@ -211,7 +211,7 @@ void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, v
         else
             cout << "R" << "(" << cur->size << ")";
     }
-    cout << cur->value << std::endl;
+    cout << cur->value->name << std::endl;
 
     if(depth > 0) new_draw[depth-1] = !left;
     print_node(cur->left, depth + 1, true, new_draw);

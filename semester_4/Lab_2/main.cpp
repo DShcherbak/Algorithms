@@ -93,13 +93,16 @@ int main() {
     for(auto & fold : included)
         OST->insert_element(fold);
     assert(test_for_correct_folders(OST, included, excluded) && cout << "Test for insertion passed.\nTest for search passed\n");
+
     set <Folder*> deleted;
+    OST->print_tree();
     for(auto & fold : included){
         if(randomInt(1,6) == 6){
             OST->delete_element(fold);
             deleted.insert(fold);
         }
     }
+
     assert(test_for_correct_folders(OST, included, excluded, deleted) && cout << "Test for deletion passed.\n");
     assert(test_for_rank_folders(OST, included, excluded, deleted) && cout << "Test for ranking passed.\n");
     return 0;
