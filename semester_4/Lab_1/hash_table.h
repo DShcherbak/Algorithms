@@ -28,20 +28,20 @@ private:
 
     vector <vector<Node<T>*>> table;
     vector <int> a, b, m;
-    int A, B, M;
+    int A = 42, B = 713, M = 30;
 
-    int first_level_hash(T elem);
+    int first_level_hash(T& elem);
 
-    int second_level_hash(int elem, int first_hash);
+    int second_level_hash(T& elem, int first_hash);
 
 public:
-    void insert_element(T new_elem);
+   // void insert_element(T new_elem);
 
     bool find_element(T elem);
 
     void delete_element(T);
 
-    void hash_all_elements(vector <T> included);
+    explicit HashTable(vector <T> included);
 
 };
 

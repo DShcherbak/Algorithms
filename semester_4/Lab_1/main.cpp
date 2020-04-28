@@ -77,10 +77,7 @@ int main() {
     vector <Folder*> included = read_folders_from_database("included");
     vector <Folder*> excluded = read_folders_from_database("excluded");
     //print_folders(included, excluded);
-    auto HT = new HashTable<Folder*>;
-    HT->hash_all_elements(included);
-    for(auto & fold : included)
-        HT->insert_element(fold);
+    auto HT = new HashTable<Folder*>(included);
     assert(test_for_correct_folders(HT, included, excluded) && cout << "Test for insertion passed.\nTest for search passed\n");
     set <Folder*> deleted;
     for(auto & fold : included){
