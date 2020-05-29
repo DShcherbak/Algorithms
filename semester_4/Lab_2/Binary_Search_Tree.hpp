@@ -15,7 +15,7 @@ Binary_Search_Tree<T>::~Binary_Search_Tree(){
 
 
 template <class T>
-void Binary_Search_Tree<T>::insert_element(const T& new_elem){
+void Binary_Search_Tree<T>::insert_element(const T* new_elem){
     Node<T>* cur = root;
     auto prev = cur;
     auto new_node = new Node<T>(new_elem);
@@ -57,7 +57,7 @@ void Binary_Search_Tree<T>::print_tree(){
 }
 
 template <class T>
-bool Binary_Search_Tree<T>::find_element(const T& elem){
+bool Binary_Search_Tree<T>::find_element(const T* elem){
     return TreeInterface<T>::find_node(root, elem);
 }
 
@@ -114,7 +114,7 @@ Node<T>* Binary_Search_Tree<T>::minimum(Node<T>* cur){
 
 
 template <class T>
-void Binary_Search_Tree<T>::delete_element(const T& elem){
+void Binary_Search_Tree<T>::delete_element(const T* elem){
     Node<T>* cur = root;
     while(cur){
         if(cur->value == elem){

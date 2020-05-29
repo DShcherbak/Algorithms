@@ -1,5 +1,4 @@
-#include <cassert>
-#include "../Folder.h"
+
 #include "Order_Statistic_Tree.h"
 
 
@@ -8,9 +7,19 @@ using namespace std;
 
 template <class T>
 Order_Statistic_Tree<T>::Order_Statistic_Tree(){
-    nil = new OSNode<T>();
+    nil = new OSNode<T>(nullptr);
     nil->size = 0;
     root = nil;
+}
+
+template <class T>
+Order_Statistic_Tree<T>::Order_Statistic_Tree(vector <shared_ptr<T>> included){
+    nil = new OSNode<T>(nullptr);
+    nil->size = 0;
+    root = nil;
+    for(auto elem : included){
+        insert_element(elem);
+    }
 }
 
 template <class T>
@@ -44,7 +53,7 @@ void Order_Statistic_Tree<T>::delete_subtree(OSNode<T>* cur) {
 }
 
 template <class T>
-void Order_Statistic_Tree<T>::insert_element(const T& new_elem){
+bool Order_Statistic_Tree<T>::insert_element(shared_ptr<T> new_elem){
     OSNode<T>* cur = root;
     auto prev = cur;
     auto new_node = new OSNode<T>(new_elem);
@@ -82,6 +91,7 @@ void Order_Statistic_Tree<T>::insert_element(const T& new_elem){
         prev->right = new_node;
     new_node->black = false;
     insert_fix(new_node);
+    return true;
 } //for now BST
 
 template <class T>
@@ -185,7 +195,7 @@ void Order_Statistic_Tree<T>::delete_fix(OSNode<T>* cur) {
 }
 
 template <class T>
-void Order_Statistic_Tree<T>::print_tree(){
+void Order_Statistic_Tree<T>::print(){
     if(root == nil)
         std::cout << "Tree is empty!\n";
     else
@@ -220,7 +230,7 @@ void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, v
 }
 
 template <class T>
-bool Order_Statistic_Tree<T>::find_element(const T& elem){
+bool Order_Statistic_Tree<T>::find_element(const shared_ptr<T> elem){
     return Order_Statistic_Tree<T>::find_node(root, elem);
 }
 
@@ -295,7 +305,7 @@ OSNode<T>* Order_Statistic_Tree<T>::minimum(OSNode<T>* cur){
 }
 
 template <class T>
-void Order_Statistic_Tree<T>::delete_element(const T& elem){
+void Order_Statistic_Tree<T>::delete_element(const shared_ptr<T> elem){
     OSNode<T>* cur = root;
     while(cur != nil){
         if(cur->value == elem){
@@ -362,22 +372,27 @@ void Order_Statistic_Tree<T>::right_rotate(OSNode<T> *cur) {
     cur->size = cur->left->size + cur->right->size + 1;
 }
 
-template<>
-int Order_Statistic_Tree<int>::get_element(int number) {
-    if(number > root->size){
-        return -1;
-    }
-    auto node = get_node_by_number(root, number);
-    return node->value;
+string convert_to_string(const int* val){
+    int x = *val;
+    return std::to_string(x);
 }
 
 template<>
-Folder* Order_Statistic_Tree<Folder*>::get_element(int number) {
+string Order_Statistic_Tree<int>::get_element(int number) {
+    if(number > root->size){
+        return "-1";
+    }
+    auto node = get_node_by_number(root, number);
+    return convert_to_string(node->value);
+}
+
+template <class T>
+string Order_Statistic_Tree<T>::get_element(int number) {
     if(number > root->size){
         return nullptr;
     }
     auto node = get_node_by_number(root, number);
-    return node->value;
+    return convert_to_string(node->value);
 }
 
 template<class T>
@@ -393,7 +408,7 @@ int Order_Statistic_Tree<T>::get_rank(OSNode<T> *cur) {
 }
 
 template<class T>
-bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const T &value) {
+bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const shared_ptr<T> value) {
     if(cur == nil)
         return false;
     if(cur->value == value)
@@ -405,7 +420,7 @@ bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const T &value) {
 }
 
 template <class T>
-OSNode<T>* Order_Statistic_Tree<T>::get_node_by_value(OSNode<T>* cur, T value){
+OSNode<T>* Order_Statistic_Tree<T>::get_node_by_value(OSNode<T>* cur, shared_ptr<T> value){
     if(cur == nil)
         return nullptr;
     if(cur->value == value)
@@ -417,7 +432,7 @@ OSNode<T>* Order_Statistic_Tree<T>::get_node_by_value(OSNode<T>* cur, T value){
 }
 
 template<class T>
-int Order_Statistic_Tree<T>::get_element_rank(const T& elem) {
+int Order_Statistic_Tree<T>::get_element_rank(const shared_ptr<T> elem) {
     OSNode<T>* node = get_node_by_value(root, elem);
     if(node != nullptr){
         return get_rank(node);

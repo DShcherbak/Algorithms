@@ -6,7 +6,6 @@
 #include "Order_Statistic_Tree.h"
 #include <cassert>
 #include "../sqlite3pp-master/headeronly_src/sqlite3pp.h"
-#include "../Folder.h"
 #include <vector>
 #include <set>
 

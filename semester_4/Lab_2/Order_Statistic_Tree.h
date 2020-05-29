@@ -3,35 +3,33 @@
 
 #include "Binary_Search_Tree.h"
 #include "Tree.h"
+#include <cassert>
 
 
 template <class T>
 struct OSNode : private Node<T>{
-    T value;
+    shared_ptr<T> value;
     OSNode<T>* parent = nullptr;
     OSNode<T>* left = nullptr;
     OSNode<T>* right = nullptr;
     bool black = true;
     int size = 0;
 
-    explicit OSNode(T _value) : Node<T>(_value){
+    explicit OSNode(shared_ptr<T> _value) {
         value = _value;
         black = true;
         size = 1;
     }
 
-    OSNode(){
-        black = true;
-        size = 1;
-    }
 
 };
 
 template <class T>
-class Order_Statistic_Tree : public Binary_Search_Tree<T> {
+class Order_Statistic_Tree : public TreeInterface<T> {
 private:
     OSNode<T>* root;
     OSNode<T>* nil;
+
 
     void delete_node(OSNode<T>* cur);
 
@@ -53,29 +51,31 @@ private:
     int get_rank(OSNode<T>* cur);
     void recount_size(OSNode<T>* cur);
 
-    bool find_node(OSNode<T>* cur, const T& value);
-    OSNode<T>* get_node_by_value(OSNode<T>* cur, T value);
+    bool find_node(OSNode<T>* cur, const shared_ptr<T> value);
+    OSNode<T>* get_node_by_value(OSNode<T>* cur, shared_ptr<T> value);
 
 public:
 
     Order_Statistic_Tree();
 
+    Order_Statistic_Tree(vector<shared_ptr<T>> included);
+
     ~Order_Statistic_Tree();
 
-    T get_element(int number);
+    bool insert_element(shared_ptr<T> new_elem);
 
-    int get_element_rank(const T& elem);
+    bool find_element(const shared_ptr<T> elem);
 
-    void insert_element(const T& new_elem);
+    void delete_element(const shared_ptr<T> elem);
 
-    bool find_element(const T& elem);
+    void print();
 
-    void delete_element(const T& elem);
+    string get_element(int number);
+
+    int get_element_rank(const shared_ptr<T> elem);
+
 
     int get_size();
-
-
-    void print_tree();
 };
 
 

@@ -2,7 +2,7 @@
 // Created by sadoffnick on 19.04.20.
 //
 #include "../sqlite3pp-master/headeronly_src/sqlite3pp.h"
-#include "../Folder.h"
+#include "../Folder/Folder.h"
 #include <iostream>
 #include <vector>
 #include <set>

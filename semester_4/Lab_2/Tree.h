@@ -8,16 +8,18 @@ using namespace std;
 
 template <class T>
 struct Node {
-    T value;
+    T* value;
     Node<T>* parent = nullptr;
     Node<T>* left = nullptr;
     Node<T>* right = nullptr;
 
-    explicit Node(T _value){
+    explicit Node(T* _value){
         value = _value;
     }
 
-    Node() = default;
+    Node(){
+        left = right = nullptr;
+    }
 };
 
 template <class T>
@@ -29,17 +31,17 @@ public:
 
     virtual ~TreeInterface() = default;
 
-    virtual void insert_element(const T& elem) = 0;
+    virtual bool insert_element(T* elem) = 0;
 
-    virtual void delete_element(const T& elem) = 0;
+    virtual void delete_element(const T* elem) = 0;
 
     template <typename N>
-    static bool find_node(N cur, const T& value);
-    virtual bool find_element(const T& elem) = 0;
+    static bool find_node(N cur, const T* value);
+    virtual bool find_element(const T* elem) = 0;
 
     template <typename N>
     static void print_node(N cur, int depth = 0, bool left = false, vector<bool> draw = {});
-    virtual void print_tree() = 0;
+    virtual void print() = 0;
 };
 
 
@@ -75,7 +77,7 @@ void TreeInterface<T>::print_node(N cur, int depth, bool left, vector<bool> draw
 
 template <class T>
 template <typename N>
-bool TreeInterface<T>::find_node(N cur, const T& value){
+bool TreeInterface<T>::find_node(N cur, const T* value){
     if(!cur)
         return false;
     if(cur->value == value)

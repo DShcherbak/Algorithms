@@ -22,11 +22,11 @@ private:
 public:
     ~Binary_Search_Tree();
 
-    void insert_element(const T& new_elem);
+    void insert_element(const T* new_elem);
 
-    bool find_element(const T& elem);
+    bool find_element(const T* elem);
 
-    void delete_element(const T& elem);
+    void delete_element(const T* elem);
 
     void print_tree();
 };

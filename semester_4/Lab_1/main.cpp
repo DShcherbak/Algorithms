@@ -1,6 +1,6 @@
 #include "hash_table.h"
 #include "../sqlite3pp-master/headeronly_src/sqlite3pp.h"
-#include "../Folder.h"
+#include "../Folder/Folder.h"
 #include <iostream>
 #include <vector>
 #include <set>
@@ -81,8 +81,9 @@ int main() {
     assert(test_for_correct_folders(HT, included, excluded) && cout << "Test for insertion passed.\nTest for search passed\n");
     set <Folder*> deleted;
     for(auto & fold : included){
-        if(randomInt(1,6) == 6){
+        if(randomInt(1,3) == 3){
             HT->delete_element(fold);
+            cout << fold->name << " is deleted." << endl;
             deleted.insert(fold);
         }
     }
