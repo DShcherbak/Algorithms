@@ -6,13 +6,11 @@
 #include <set>
 
 struct Wrapped_folder{
-    Folder* element;
-    bool included = 0;
-    bool deleted = 0;
+    shared_ptr<Folder> element;
+    bool included = false;
+    bool deleted = false;
 
-    ~Wrapped_folder(){
-        delete element;
-    }
+    ~Wrapped_folder() = default;
 };
 
 struct Information_storage{
@@ -22,9 +20,9 @@ struct Information_storage{
     set<string> deleted = {};
 
     ~Information_storage(){
-/*        for(auto wr : elements){
-            if(!wr->included || wr->deleted) delete wr;
-        }(*/
+        for(auto wf : elements){
+            delete wf;
+        }
     }
 };
 

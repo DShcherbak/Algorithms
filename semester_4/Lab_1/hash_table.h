@@ -19,10 +19,7 @@ struct HashNode{
         value = _val;
     }
 
-    ~HashNode(){
-        if(value)
-            delete value;
-    }
+    ~HashNode() = default;
 };
 
 template <class T>

@@ -46,15 +46,15 @@ Information_storage* read_database(const string &database) {
 
         sqlite3pp::query qry1(db, "SELECT * FROM Files WHERE folder_id = ?1");
         qry1.bind(1, folder_id);
-        vector <File*> files;
+        vector <shared_ptr<File>> files;
         for (sqlite3pp::query::iterator j = qry1.begin(); j != qry1.end(); ++j) {
             string file_name = (*j).get<char const*>(1);
-            int size = (*j).get<int>(2);
+            int file_size = (*j).get<int>(2);
             File* file = new File(file_name);
-            file->size = size;
-            files.push_back(file);
+            file->size = file_size;
+            files.emplace_back(file);
         }
-        Folder* folder = new Folder(name, files);
+        shared_ptr<Folder> folder(new Folder(name, files));
         auto wrapped_element = new Wrapped_folder;
         wrapped_element->element = folder;
         wrapped_element->included = (*i).get<int>(3);
@@ -81,7 +81,7 @@ void create_interface_and_perform(Information_storage* info_storage, Data_Struct
 void get_data_and_perform(int choice){
     int chosen_db = choose_database();
     Information_storage* info_storage;
-    vector <Folder*> base;
+    vector <shared_ptr<Folder>> base;
     if(chosen_db < 1)
         return;
     else if(chosen_db > 1){
@@ -89,7 +89,7 @@ void get_data_and_perform(int choice){
         info_storage = read_database(database);
         for (Wrapped_folder* data_element : info_storage->elements) {
             if (data_element->included) {
-                base.push_back(data_element->element);
+                base.emplace_back(data_element->element);
             }
         }
     }
@@ -97,7 +97,7 @@ void get_data_and_perform(int choice){
         info_storage = new Information_storage;
         for (Wrapped_folder* data_element : info_storage->elements) {
             if (data_element->included) {
-                base.push_back(data_element->element);
+                base.emplace_back(data_element->element);
             }
         }
     }

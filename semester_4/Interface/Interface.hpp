@@ -1,5 +1,7 @@
 #include "Interface.h"
 
+#include <memory>
+
 
 // Обрати базу даних для виконання (мала, велика, ніякої)
 // ВИконати зчитку з бази
@@ -36,7 +38,7 @@ string convert_KB(int KB){
 }
 
 string element_full_info(Wrapped_folder* wrapped_folder, bool OK){
-    string result = "";
+    string result;
     string temp = wrapped_folder->element->name;
     result += temp;
     int len = 20-result.length();
@@ -49,7 +51,7 @@ string element_full_info(Wrapped_folder* wrapped_folder, bool OK){
     result += to_string(wrapped_folder->deleted) + "         ";
     result += (OK ? "[OK]" : "[Fail]");
     result += "\n";
-    for(File* file : wrapped_folder->element->files){
+    for(const shared_ptr<File>& file : wrapped_folder->element->files){
         result += " |--- " + file->name;
         len = 14-file->name.length();
         for(int i = 0; i < len; i++) result += " ";
@@ -70,7 +72,7 @@ void Interface<Data_Structure, Elem>::check_state(){
     cout << "----------------------------------------------------------\n";
     for (auto data_element : info_storage->elements){
         bool OK = false;
-        Folder* folder = data_element->element;
+        shared_ptr<Folder> folder = data_element->element;
         if(data_element->included){
             OK = data_structure->find_element(folder);
         }
@@ -116,24 +118,22 @@ void Interface<Data_Structure, Elem>::perform() {
 template <class Data_Structure, class Elem>
 void Interface<Data_Structure, Elem>::perform_command(int command_code) {
     string name;
-    Folder* new_folder;
+    shared_ptr<Folder> new_folder;
     bool OK;
     switch(command_code){
         case 1:
             cout << "Enter new folder name to insert: ";
             cin >> name;
-            new_folder = new Folder(name);
+            new_folder = std::make_shared<Folder>(name);
             OK = data_structure->insert_element(new_folder);
-            if(!OK)
-                delete new_folder;
+
             break;
         case 2:
             cout << "Enter new folder name to find: ";
             cin >> name;
             name = "Folder 1";
-            new_folder = new Folder(name);
+            new_folder = std::make_shared<Folder>(name);
             OK = data_structure->find_element(new_folder);
-            delete new_folder;
             std::cout << (OK ? "Found " : "Not found ") << "\"" << name << "\"" << " in 1data structure!"<< std::endl;
             break;
         case 3:

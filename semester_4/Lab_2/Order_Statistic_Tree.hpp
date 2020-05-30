@@ -62,7 +62,7 @@ bool Order_Statistic_Tree<T>::insert_element(shared_ptr<T> new_elem){
     while(cur != nil){
         cur->size++;
         prev = cur;
-        if(cur->value == new_elem){
+        if((*cur->value) == (*new_elem)){
             if(cur->left == nil)
                 cur = cur->left;
             else if(cur->right == nil)
@@ -75,7 +75,7 @@ bool Order_Statistic_Tree<T>::insert_element(shared_ptr<T> new_elem){
                     cur = cur->right;
             }
         }
-        else if(cur->value < new_elem)
+        else if((*cur->value) < (*new_elem))
             cur = cur->right;
         else
             cur = cur->left;
@@ -85,7 +85,7 @@ bool Order_Statistic_Tree<T>::insert_element(shared_ptr<T> new_elem){
     if(cur == root){
         root = new_node;
         root->parent = nil;
-    }else if(new_node->value < prev->value)
+    }else if((*new_node->value) < (*prev->value))
         prev->left = new_node;
     else
         prev->right = new_node;
@@ -202,7 +202,7 @@ void Order_Statistic_Tree<T>::print(){
         Order_Statistic_Tree<T>::print_node(root);
     cout << "-------------------------------" << endl;
 }
-
+/*
 template <class T>
 void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, vector<bool> draw) {
     if(cur == nil)
@@ -221,16 +221,53 @@ void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, v
         else
             cout << "R" << "(" << cur->size << ")";
     }
-    cout << cur->value->name << std::endl;
+    cout << convert_to_string(cur->value) << std::endl;
 
     if(depth > 0) new_draw[depth-1] = !left;
     print_node(cur->left, depth + 1, true, new_draw);
 
 
 }
+ */
 
 template <class T>
-bool Order_Statistic_Tree<T>::find_element(const shared_ptr<T> elem){
+void Order_Statistic_Tree<T>::print_node(OSNode<T>* cur, int depth, bool left, vector<bool> draw) {
+    if (cur == nil)
+        return;
+    vector<bool> new_draw = draw;
+    new_draw.push_back(false);
+    if (depth > 0)
+        new_draw[depth] = left;
+    if(cur->right != nil){
+        print_node(cur->right, depth + 1, false, new_draw);
+        for (int i = 0; i <= depth; i++) {
+            cout << (new_draw[i] ? "|" : " ") << "\t";
+        }
+        cout << "|\n";
+    }
+    for (int i = 0; i < depth; i++) {
+        cout << (draw[i] ? "|" : " ") << "\t";
+    }
+
+    if (cur->black)
+        cout << "B" << "(" << cur->size << ")";
+    else
+        cout << "R" << "(" << cur->size << ")";
+    cout << convert_to_string(cur->value) << std::endl;
+
+    if(depth > 0)
+        new_draw[depth] = !left;
+    if(cur->left != nil){
+        for (int i = 0; i <= depth; i++) {
+            cout << (new_draw[i] ? "|" : " ") << "\t";
+        }
+        cout << "|\n";
+        print_node(cur->left, depth + 1, true, new_draw);
+    }
+}
+
+template <class T>
+bool Order_Statistic_Tree<T>::find_element(shared_ptr<T> elem){
     return Order_Statistic_Tree<T>::find_node(root, elem);
 }
 
@@ -308,10 +345,10 @@ template <class T>
 void Order_Statistic_Tree<T>::delete_element(const shared_ptr<T> elem){
     OSNode<T>* cur = root;
     while(cur != nil){
-        if(cur->value == elem){
+        if((*cur->value) == (*elem)){
             delete_node(cur);
             return;
-        }else if(cur->value < elem){
+        }else if((*cur->value) < (*elem)){
             if(!cur->right)
                 return;
             else{
@@ -372,7 +409,7 @@ void Order_Statistic_Tree<T>::right_rotate(OSNode<T> *cur) {
     cur->size = cur->left->size + cur->right->size + 1;
 }
 
-string convert_to_string(const int* val){
+string convert_to_string(const shared_ptr<int> val){
     int x = *val;
     return std::to_string(x);
 }
@@ -389,7 +426,7 @@ string Order_Statistic_Tree<int>::get_element(int number) {
 template <class T>
 string Order_Statistic_Tree<T>::get_element(int number) {
     if(number > root->size){
-        return nullptr;
+        return "";
     }
     auto node = get_node_by_number(root, number);
     return convert_to_string(node->value);
@@ -411,9 +448,9 @@ template<class T>
 bool Order_Statistic_Tree<T>::find_node(OSNode<T> *cur, const shared_ptr<T> value) {
     if(cur == nil)
         return false;
-    if(cur->value == value)
+    if((*cur->value) == (*value))
         return true;
-    else if(cur->value > value)
+    else if((*cur->value) > (*value))
         return find_node(cur->left, value);
     else
         return find_node(cur->right, value);
@@ -423,9 +460,9 @@ template <class T>
 OSNode<T>* Order_Statistic_Tree<T>::get_node_by_value(OSNode<T>* cur, shared_ptr<T> value){
     if(cur == nil)
         return nullptr;
-    if(cur->value == value)
+    if((*cur->value) == (*value))
         return cur;
-    else if(cur->value > value)
+    else if((*cur->value) > (*value))
         return get_node_by_value(cur->left, value);
     else
         return get_node_by_value(cur->right, value);

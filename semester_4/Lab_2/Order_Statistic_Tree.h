@@ -37,7 +37,7 @@ private:
 
     OSNode<T>* minimum(OSNode<T>* cur);
 
-    void print_node(OSNode<T>* cur, int depth = 0, bool left = false, vector<bool> draw = {});
+    void print_node(OSNode<T>* cur, int depth = 0, bool left = false, vector<bool> draw = {false});
     void delete_subtree(OSNode<T> *cur);
 
     void left_rotate(OSNode<T>* cur);
@@ -51,28 +51,28 @@ private:
     int get_rank(OSNode<T>* cur);
     void recount_size(OSNode<T>* cur);
 
-    bool find_node(OSNode<T>* cur, const shared_ptr<T> value);
+    bool find_node(OSNode<T>* cur, shared_ptr<T> value);
     OSNode<T>* get_node_by_value(OSNode<T>* cur, shared_ptr<T> value);
 
 public:
 
     Order_Statistic_Tree();
 
-    Order_Statistic_Tree(vector<shared_ptr<T>> included);
+    explicit Order_Statistic_Tree(vector<shared_ptr<T>> included);
 
     ~Order_Statistic_Tree();
 
     bool insert_element(shared_ptr<T> new_elem);
 
-    bool find_element(const shared_ptr<T> elem);
+    bool find_element(shared_ptr<T> elem);
 
-    void delete_element(const shared_ptr<T> elem);
+    void delete_element(shared_ptr<T> elem);
 
     void print();
 
     string get_element(int number);
 
-    int get_element_rank(const shared_ptr<T> elem);
+    int get_element_rank(shared_ptr<T> elem);
 
 
     int get_size();

@@ -31,13 +31,13 @@ public:
 
     virtual ~TreeInterface() = default;
 
-    virtual bool insert_element(T* elem) = 0;
+    virtual bool insert_element(shared_ptr<T> elem) = 0;
 
-    virtual void delete_element(const T* elem) = 0;
+    virtual void delete_element(shared_ptr<T> elem) = 0;
 
     template <typename N>
-    static bool find_node(N cur, const T* value);
-    virtual bool find_element(const T* elem) = 0;
+    static bool find_node(N cur, shared_ptr<T> value);
+    virtual bool find_element(shared_ptr<T> elem) = 0;
 
     template <typename N>
     static void print_node(N cur, int depth = 0, bool left = false, vector<bool> draw = {});
@@ -77,7 +77,7 @@ void TreeInterface<T>::print_node(N cur, int depth, bool left, vector<bool> draw
 
 template <class T>
 template <typename N>
-bool TreeInterface<T>::find_node(N cur, const T* value){
+bool TreeInterface<T>::find_node(N cur, const shared_ptr<T> value){
     if(!cur)
         return false;
     if(cur->value == value)
