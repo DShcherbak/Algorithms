@@ -103,8 +103,7 @@ void Interface<Data_Structure, Elem>::perform() {
         int chosen_command;
         if(!isdigit(choice)){
             cout << "Некоректні дані: " << choice << endl;
-            chosen_command = -1;
-            return;
+            continue;
         }
         else{
             chosen_command = (int) choice - '0';
@@ -131,7 +130,6 @@ void Interface<Data_Structure, Elem>::perform_command(int command_code) {
         case 2:
             cout << "Enter new folder name to find: ";
             cin >> name;
-            name = "Folder 1";
             new_folder = std::make_shared<Folder>(name);
             OK = data_structure->find_element(new_folder);
             std::cout << (OK ? "Found " : "Not found ") << "\"" << name << "\"" << " in 1data structure!"<< std::endl;

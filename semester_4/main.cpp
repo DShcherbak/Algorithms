@@ -1,13 +1,12 @@
 #include "Lab_1/hash_table.h"
 #include "Lab_2/Order_Statistic_Tree.h"
+#include "Lab_3/Splay_Tree.h"
 #include "Interface/Interface.h"
 #include "sqlite3pp-master/headeronly_src/sqlite3pp.h"
 //#include "Folder/Folder.h"
 #include <iostream>
 #include <vector>
-#include <set>
-#include <cassert>
-#include <random>
+
 
 using namespace std;
 
@@ -72,7 +71,6 @@ Information_storage* read_database(const string &database) {
 
 template <class Data_Structure>
 void create_interface_and_perform(Information_storage* info_storage, Data_Structure* data_structure){
-    std::cout << "Here " << (info_storage ? "we " : "not we") << (data_structure ? "are" : "not are") << std::endl;
     auto interface = new Interface<Data_Structure, Folder>(info_storage, data_structure);
     interface->perform();
     delete interface;
@@ -109,16 +107,20 @@ void get_data_and_perform(int choice){
     }else if(choice == 2){
         auto structure = new Order_Statistic_Tree<Folder>(base);
         create_interface_and_perform(info_storage, structure);
+    }else if(choice == 3){
+        auto structure = new Splay_Tree<Folder>(base);
+        create_interface_and_perform(info_storage, structure);
     }
 }
 
 int main() {
     std::shared_ptr<Folder> p(std::make_shared<Folder>("Folder 1"));
     while(true){
-        cout << "Вітаю!\n" << endl;
+        cout << "\nВітаю!" << endl;
         cout << "Оберіть лабораторну для тестування: " << endl;
         cout << "(1) HASH TABLE\n";
         cout << "(2) Order-Statistic Tree\n";
+        cout << "(3) Splay Tree\n";
         cout << "(0) Exit\n";
         cout << "Ваш вибір: ";
         char choice;

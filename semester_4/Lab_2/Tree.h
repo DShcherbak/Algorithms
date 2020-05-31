@@ -3,17 +3,18 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
 
 using namespace std;
 
 template <class T>
 struct Node {
-    T* value;
+    shared_ptr<T> value;
     Node<T>* parent = nullptr;
     Node<T>* left = nullptr;
     Node<T>* right = nullptr;
 
-    explicit Node(T* _value){
+    explicit Node(shared_ptr<T> _value){
         value = _value;
     }
 
@@ -57,22 +58,35 @@ void TreeInterface<T>::delete_subtree(N cur) {
 
 template <class T>
 template <typename N>
-void TreeInterface<T>::print_node(N cur, int depth, bool left, vector<bool> draw){
-    if(cur == nullptr)
+void TreeInterface<T>::print_node(N cur, int depth, bool left, vector<bool> draw) {
+    if (cur == nullptr)
         return;
-    vector <bool> new_draw = draw;
+    vector<bool> new_draw = draw;
     new_draw.push_back(false);
-    if(depth > 0) new_draw[depth-1] = left;
-    print_node(cur->right, depth + 1, false, new_draw);
-
-    for(int i = 0; i < depth-1; i++){
+    if (depth > 0)
+        new_draw[depth] = left;
+    if(cur->right != nullptr){
+        print_node(cur->right, depth + 1, false, new_draw);
+        for (int i = 0; i <= depth; i++) {
+            cout << (new_draw[i] ? "|" : " ") << "\t";
+        }
+        cout << "|\n";
+    }
+    for (int i = 0; i < depth; i++) {
         cout << (draw[i] ? "|" : " ") << "\t";
     }
-    cout << (depth > 0 ? "|---" : "") << cur->value << std::endl;
 
-    if(depth > 0) new_draw[depth-1] = !left;
-    print_node(cur->left, depth + 1, true, new_draw);
+    cout << convert_to_string(cur->value) << std::endl;
 
+    if(depth > 0)
+        new_draw[depth] = !left;
+    if(cur->left != nullptr){
+        for (int i = 0; i <= depth; i++) {
+            cout << (new_draw[i] ? "|" : " ") << "\t";
+        }
+        cout << "|\n";
+        print_node(cur->left, depth + 1, true, new_draw);
+    }
 }
 
 template <class T>
@@ -80,9 +94,9 @@ template <typename N>
 bool TreeInterface<T>::find_node(N cur, const shared_ptr<T> value){
     if(!cur)
         return false;
-    if(cur->value == value)
+    if((*cur->value) == (*value))
         return true;
-    else if(cur->value > value)
+    else if((*cur->value) > (*value))
         return find_node(cur->left, value);
     else
         return find_node(cur->right, value);
