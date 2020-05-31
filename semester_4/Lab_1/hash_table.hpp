@@ -98,6 +98,7 @@ template <class T>
 HashTable<T>::HashTable(vector<shared_ptr<T>> included){
     vector <pair <HashNode<T>*, int>> hashes;
     table.assign(M, {});
+    vector <vector<shared_ptr<T>>> pre_table(M);
     a.assign(M,0);
     b.assign(M,0);
     m.assign(M,0);
@@ -105,7 +106,7 @@ HashTable<T>::HashTable(vector<shared_ptr<T>> included){
     for(auto elem : included){
         int cur_hash = first_level_hash(elem);
         count[cur_hash]++;
-        table[cur_hash].push_back(new HashNode<T>(elem));
+        pre_table[cur_hash].push_back(elem);
     }
     for(int i = 0; i < M; i++){
         if(count[i] == 0){
@@ -115,21 +116,30 @@ HashTable<T>::HashTable(vector<shared_ptr<T>> included){
         }
         else{
             m[i] = count[i] * count[i];
+
                 bool collisions = true;
             while(collisions){
                 vector <bool> is_hashed(m[i],0);
                 a[i] = random_int(0, mod-1);
                 b[i] = random_int(0, mod-2);
                 collisions = false;
-                for(auto HashNode : table[i]){
-                    int id = second_level_hash(HashNode->value, i);
+                for(auto elem : pre_table[i]){
+                    int id = second_level_hash(elem, i);
                     if(is_hashed[id]){
                         collisions = true;
                         break;
                     }
                     is_hashed[id] = true;
                 }
+
+
             }
+            for(auto HashNode : table[i]){
+                delete HashNode;
+
+            }
+            table[i].resize(m[i]);
+
         }
     }
     for(auto elem : included){
@@ -145,10 +155,14 @@ template <class T>
 void HashTable<T>::print(){
     for(int i = 0; i < M; i++){
         cout << "[" << i  << "] ";
+        cout << "(" << table[i].size() << ") ";
         for(int j = 0, n = table[i].size(); j < n; j++){
-            cout << (table[i][j] ? convert_to_string(table[i][j]->value) : ".") << "|\n";
+            cout << (table[i][j] ? convert_to_string(table[i][j]->value) : ".") << "|";
         }
-        cout << "---------------------------------------\n";
+        if(table[i].size() == 0)
+            cout << "---------------------------------------\n";
+        else
+            cout << endl;
     }
 }
 

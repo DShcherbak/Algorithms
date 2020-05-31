@@ -132,10 +132,16 @@ void Interface<Data_Structure, Elem>::perform_command(int command_code) {
             cin >> name;
             new_folder = std::make_shared<Folder>(name);
             OK = data_structure->find_element(new_folder);
-            std::cout << (OK ? "Found " : "Not found ") << "\"" << name << "\"" << " in 1data structure!"<< std::endl;
+            std::cout << (OK ? "Found " : "Not found ") << "\"" << name << "\"" << " in data structure!"<< std::endl;
             break;
         case 3:
             data_structure->print();
+            break;
+        case 4:
+            cout << "Enter new folder name to delete: ";
+            cin >> name;
+            new_folder = std::make_shared<Folder>(name);
+            data_structure->delete_element(new_folder);
             break;
         default:
             break;

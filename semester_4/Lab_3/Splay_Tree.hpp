@@ -49,7 +49,8 @@ void Splay_Tree<T>::print(){
 
 template <class T>
 bool Splay_Tree<T>::find_element(const shared_ptr<T> elem){
-    return splay(root, elem);
+    root = splay(root, elem);
+    return ((*root->value) == (*elem));
 }
 
 
@@ -105,26 +106,26 @@ Node<T>* Splay_Tree<T>::minimum(Node<T>* cur){
 
 
 template <class T>
-void Splay_Tree<T>::delete_element(const shared_ptr<T> elem){
-    Node<T>* cur = root;
-    while(cur){
-        if((*cur->value) == (*elem)){
-            delete_node(cur);
-            return;
-        }else if((*cur->value) < (*elem)){
-            if(!cur->right)
-                return;
-            else
-                cur = cur->right;
-        }else{
-            if(!cur->left)
-                return;
-            else
-                cur = cur->left;
-        }
+void Splay_Tree<T>::delete_element(const shared_ptr<T> elem) {
+    Node<T> *cur = root;
+    if (!root)
+        return;
+    root = splay(root, elem);
+    if (!((*root->value) == (*elem)))
+        return;
+    auto left_tree = root->left;
+    auto right_tree = root->right;
+    delete root;
+    if (!right_tree) {
+        root = left_tree;
+        return;
     }
+    auto new_root = minimum(right_tree);
+    right_tree = splay(right_tree, new_root->value);
+    assert(!right_tree->left);
+    right_tree->left = left_tree;
+    root = right_tree;
 }
-
 
 
 template<class T>
