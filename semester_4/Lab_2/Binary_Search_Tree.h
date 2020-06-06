@@ -2,7 +2,7 @@
 #ifndef LAB_2_BINARY_SEARCH_TREE_H
 #define LAB_2_BINARY_SEARCH_TREE_H
 
-#include "Tree.h"
+#include "../Tree/Tree.h"
 #include <random>
 
 using namespace std;

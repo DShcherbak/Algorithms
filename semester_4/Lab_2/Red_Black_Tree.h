@@ -2,7 +2,7 @@
 #define LAB_2_RED_BLACK_TREE_H
 
 
-#include "Tree.h"
+#include "../Tree/Tree.h"
 
 
 template <class T>

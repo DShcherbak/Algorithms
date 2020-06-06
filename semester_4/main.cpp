@@ -1,6 +1,7 @@
 #include "Lab_1/hash_table.h"
 #include "Lab_2/Order_Statistic_Tree.h"
 #include "Lab_3/Splay_Tree.h"
+#include "Lab_4/Optimal_Binary_Tree.h"
 #include "Interface/Interface.h"
 #include "sqlite3pp-master/headeronly_src/sqlite3pp.h"
 //#include "Folder/Folder.h"
@@ -110,10 +111,14 @@ void get_data_and_perform(int choice){
     }else if(choice == 3){
         auto structure = new Splay_Tree<Folder>(base);
         create_interface_and_perform(info_storage, structure);
+    }else if(choice == 4){
+        auto structure = new Optimal_Binary_Tree<Folder>(base, {}, {});
+        create_interface_and_perform(info_storage, structure);
     }
 }
 
 int main() {
+
     std::shared_ptr<Folder> p(std::make_shared<Folder>("Folder 1"));
     while(true){
         cout << "\nВітаю!" << endl;
@@ -121,6 +126,7 @@ int main() {
         cout << "(1) HASH TABLE\n";
         cout << "(2) Order-Statistic Tree\n";
         cout << "(3) Splay Tree\n";
+        cout << "(4) Optimal Binary Tree\n";
         cout << "(0) Exit\n";
         cout << "Ваш вибір: ";
         char choice;

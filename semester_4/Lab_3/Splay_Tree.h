@@ -1,7 +1,7 @@
 #ifndef SEMESTER_4_SPLAY_TREE_H
 #define SEMESTER_4_SPLAY_TREE_H
 
-#include "../Lab_2/Tree.h"
+#include "../Tree/Tree.h"
 #include <cassert>
 #include <memory>
 #include <random>

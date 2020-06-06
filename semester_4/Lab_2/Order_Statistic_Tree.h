@@ -2,7 +2,7 @@
 #define LAB_2_ORDER_STATISTIC_TREE_H
 
 #include "Binary_Search_Tree.h"
-#include "Tree.h"
+#include "../Tree/Tree.h"
 #include <cassert>
 
 
