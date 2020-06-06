@@ -6,6 +6,7 @@
 #define SEMESTER_4_OPTIMAL_BINARY_TREE_H
 
 #include "../Tree/Tree.h"
+#include <algorithm>
 
 
 template  <class T>
@@ -19,7 +20,7 @@ private:
     vector <double> _miss_probabilities;
     vector <vector<int>> _root;
 
-    Node<T>* build_optimal_tree(const vector<shared_ptr<T>> &included, int right, int left);
+    Node<T>* build_optimal_tree(const vector<shared_ptr<T>> &included, int left, int right);
 
     Node<T>* minimum(Node<T>* cur);
 

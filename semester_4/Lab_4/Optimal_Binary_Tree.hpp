@@ -63,12 +63,18 @@ Node<T>* Optimal_Binary_Tree<T>::build_optimal_tree(const vector<shared_ptr<T>> 
 }
 
 template <class T>
+bool lesser(shared_ptr<T> a, shared_ptr<T> b){
+    return (*a) < (*b);
+}
+
+template <class T>
 Optimal_Binary_Tree<T>::Optimal_Binary_Tree(const vector <shared_ptr<T>>& included,
                                              std::vector <double> value_probabilities,
                                              std::vector <double> miss_value_probabilities)  {
     int n = included.size();
 
-    if(value_probabilities.empty() || miss_value_probabilities.empty()){
+    if(value_probabilities.empty()){
+        //sort(included.begin(), included.end(), lesser);
         cout << "Генерація імовірностей для пошуку елементів дерева:\n";
         double silver_line = 0.8;
 
@@ -84,6 +90,14 @@ Optimal_Binary_Tree<T>::Optimal_Binary_Tree(const vector <shared_ptr<T>>& includ
             miss_value_probabilities = random_vector(n+1, 1-silver_line);
         }
     }
+    cout << "Less than " << convert_to_string(included[0]) << " : " <<   miss_value_probabilities[0] << endl;
+    for(int i = 0; i < n-1; i++){
+        cout << convert_to_string(included[i]) << " : " << value_probabilities[i] << endl;
+        cout << "Lies in (" << convert_to_string(included[i]) << "; " << convert_to_string(included[i+1]) << ") : " << miss_value_probabilities[i+1] << endl;
+    }
+    cout << convert_to_string(included[n - 1]) << " : " << value_probabilities[n - 1] << endl;
+    cout << "Greater than"  << convert_to_string(included[n - 1]) << " : " <<   miss_value_probabilities[n - 1];
+
 
     _values_probabilities = value_probabilities;
     _miss_probabilities = miss_value_probabilities;
@@ -108,12 +122,12 @@ Optimal_Binary_Tree<T>::Optimal_Binary_Tree(const vector <shared_ptr<T>>& includ
         }
     }
     go(0,n-1);
-    for(int i = 0; i < n; i++){
+    /*for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             cout << "(" << DP[i][j] << ", "  << _root[i][j] << ") ";
         }
         cout << endl;
-    }
+    }*/
     root = build_optimal_tree(included, 0, n-1);
 }
 
@@ -137,7 +151,7 @@ bool Optimal_Binary_Tree<T>::find_element(shared_ptr<T> elem){
 }
 
 template <class T>
-bool Optimal_Binary_Tree<T>::insert_element(shared_ptr<T> elem) {
+bool Optimal_Binary_Tree<T>::insert_element(shared_ptr<T>) {
     std::cout << "Не можна вставляти елементи в оптимальне бінарне дерево.\n";
     std::cout << "Для збереження властивостей дерево має бути статичним." << endl;
 
@@ -145,7 +159,7 @@ bool Optimal_Binary_Tree<T>::insert_element(shared_ptr<T> elem) {
 }
 
 template <class T>
-void Optimal_Binary_Tree<T>::delete_element(shared_ptr<T> elem) {
+void Optimal_Binary_Tree<T>::delete_element(shared_ptr<T>) {
     std::cout << "Не можна видаляти елементи з оптимального бінарного дерева.\n";
     std::cout << "Для збереження властивостей дерево має бути статичним." << endl;
 }
@@ -169,7 +183,7 @@ void Optimal_Binary_Tree<T>::print_node(Node<T>* cur, int depth, bool left, vect
         cout << (draw[i] ? "|" : " ") << "\t";
     }
 
-    cout <<  "(" << _values_probabilities[0] << ")";
+//    cout <<  "(" << _values_probabilities[0] << ")";
     cout << convert_to_string(cur->value) << std::endl;
 
 
