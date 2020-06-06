@@ -2,6 +2,7 @@
 #include "Lab_2/Order_Statistic_Tree.h"
 #include "Lab_3/Splay_Tree.h"
 #include "Lab_4/Optimal_Binary_Tree.h"
+#include "Lab_5/Persistent_Tree.h"
 #include "Interface/Interface.h"
 #include "sqlite3pp-master/headeronly_src/sqlite3pp.h"
 //#include "Folder/Folder.h"
@@ -11,7 +12,7 @@
 
 using namespace std;
 
-vector <string> databases = {"Exit", "None", "../databases/small_database.db", "../databases/big_database.db"};
+const vector <string> databases = {"Exit", "None", "../databases/small_database.db", "../databases/big_database.db"};
 
 int choose_database(){
     cout << "Оберіть базу даних для зчитки: " << endl;
@@ -112,7 +113,10 @@ void get_data_and_perform(int choice){
         auto structure = new Splay_Tree<Folder>(base);
         create_interface_and_perform(info_storage, structure);
     }else if(choice == 4){
-        auto structure = new Optimal_Binary_Tree<Folder>(base, {}, {});
+        auto structure = new Optimal_Binary_Tree<Folder>(base);
+        create_interface_and_perform(info_storage, structure);
+    }else if(choice == 5){
+        auto structure = new Persistent_Tree<Folder>(base);
         create_interface_and_perform(info_storage, structure);
     }
 }
@@ -127,6 +131,7 @@ int main() {
         cout << "(2) Order-Statistic Tree\n";
         cout << "(3) Splay Tree\n";
         cout << "(4) Optimal Binary Tree\n";
+        cout << "(5) Persistent Red-Black Tree\n";
         cout << "(0) Exit\n";
         cout << "Ваш вибір: ";
         char choice;

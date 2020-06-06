@@ -1,34 +1,18 @@
-#ifndef LAB_2_RED_BLACK_TREE_H
-#define LAB_2_RED_BLACK_TREE_H
+//
+// Created by sadoffnick on 07.06.20.
+//
+
+#ifndef SEMESTER_4_PERSISTENT_TREE_H
+#define SEMESTER_4_PERSISTENT_TREE_H
 
 
 #include "../Tree/Tree.h"
-
-
+#include "../Lab_2/Red_Black_Tree.h"
 template <class T>
-struct RBNode : private Node<T>{
-    shared_ptr<T> value;
-    RBNode<T>* parent = nullptr;
-    RBNode<T>* left = nullptr;
-    RBNode<T>* right = nullptr;
-    bool black = true;
-
-    explicit RBNode(shared_ptr<T> _value) : Node<T>(_value){
-        value = _value;
-        black = true;
-    }
-
-    RBNode(){
-
-    }
-
-
-};
-
-template <class T>
-class Red_Black_Tree : public Binary_Search_Tree<T> {
+class Persistent_Tree : public TreeInterface<T> {
 private:
-    RBNode<T>* root;
+    vector<RBNode<T>*> roots;
+    int current = 0;
     RBNode<T>* nil;
 
     void delete_node(RBNode<T>* cur);
@@ -44,15 +28,18 @@ private:
     void right_rotate(RBNode<T> *cur);
 
     void insert_fix(RBNode<T> *cur);
+    void insert_fix_free(RBNode<T> *cur);
+    void free_insert(shared_ptr<T> elem);
     void delete_fix(RBNode<T> *cur);
 
     bool find_node(RBNode<T>* cur, shared_ptr<T> value);
 
 public:
 
-    Red_Black_Tree();
+    Persistent_Tree();
+    explicit Persistent_Tree(vector <shared_ptr<T>> included);
 
-    ~Red_Black_Tree();
+    ~Persistent_Tree();
 
     bool insert_element(shared_ptr<T> new_elem);
 
@@ -60,10 +47,14 @@ public:
 
     void delete_element(shared_ptr<T> elem);
 
+
     void print();
 };
 
 
-#include "Red_Black_Tree.hpp"
-#endif //LAB_2_RED_BLACK_TREE_H
+#include "Persistent_Tree.hpp"
 
+
+
+
+#endif //SEMESTER_4_PERSISTENT_TREE_H

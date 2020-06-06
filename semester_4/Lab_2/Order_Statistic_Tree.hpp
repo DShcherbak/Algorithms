@@ -63,17 +63,7 @@ bool Order_Statistic_Tree<T>::insert_element(shared_ptr<T> new_elem){
         cur->size++;
         prev = cur;
         if((*cur->value) == (*new_elem)){
-            if(cur->left == nil)
-                cur = cur->left;
-            else if(cur->right == nil)
-                cur = cur->right;
-            else{
-                int ran = randomInt(0,1);
-                if(ran)
-                    cur = cur->left;
-                else
-                    cur = cur->right;
-            }
+            return false;
         }
         else if((*cur->value) < (*new_elem))
             cur = cur->right;
