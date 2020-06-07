@@ -110,6 +110,29 @@ void Persistent_Tree<T>::delete_subtree(shared_ptr<PNode<T>> cur) {
 }
 
 template <class T>
+shared_ptr<PNode<T>> make_full_copy(shared_ptr<PNode<T>> old){
+    string name = convert_to_string(old->value);
+    auto new_cur = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
+    new_cur->left = old->left;
+    new_cur->right = old->right;
+    new_cur->parent = old->parent;
+    new_cur->black = old->black;
+    return new_cur;
+}
+
+template <class T>
+void fully_reconnect(shared_ptr<PNode<T>> new_node, shared_ptr<PNode<T>> father = nullptr, bool left = true) {
+    new_node->left->parent = new_node;
+    new_node->right->parent = new_node;
+    if(father){
+        if(left)
+            father->left = new_node;
+        else
+            father->right = new_node;
+    }
+}
+
+template <class T>
 bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
     if(current != last){
         cout << "Вставлення нового елементу неможливо, поки ви переглядаєте історію.";
@@ -120,58 +143,37 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
         return false;
     current++;
     last++;
-    string name = convert_to_string(roots[current-1]->value) + '*';
-    auto new_root = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
-    new_root->left = roots[current-1]->left;
-    new_root->left->parent = new_root;
 
-    new_root->right = roots[current-1]->right;
-    new_root->right->parent = new_root;
-
-    new_root->parent = roots[current-1]->parent;
+    //create new root
+    auto new_root = make_full_copy(roots[current-1]);
+    fully_reconnect(new_root);
     roots.push_back(new_root);
 
+    // create cir and prev pointers
     shared_ptr<PNode<T>> cur = new_root;
-
     auto prev = cur;
+
+    //create new node to insert
     auto new_node = make_shared<PNode<T>>(PNode<T>(new_elem));
     new_node->left = nil;
     new_node->right = nil;
 
+    //going down the tree
     while(cur != nil){
-
         prev = cur;
         if((*cur->value) < (*new_elem)){
             if(cur->right != nil){
-                name = convert_to_string(cur->right->value) + '*';
-                auto new_cur = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
-                new_cur->left = cur->right->left;
-                new_cur->right = cur->right->right;
-                new_cur->parent = cur;
-                cur->right = new_cur;
-                new_cur->left->parent = new_cur;
-                new_cur->right->parent = new_cur;
+                auto new_cur = make_full_copy(cur->right);
+                fully_reconnect(new_cur, cur, false);
             }
-
-
             cur = cur->right;
         }
         else{
             if(cur->left != nil){
-                name = convert_to_string(cur->left->value) + '*';
-                auto new_cur = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
-                new_cur->left = cur->left->left;
-                new_cur->right = cur->left->right;
-                new_cur->parent = cur;
-                cur->left = new_cur;
-                new_cur->left->parent = new_cur;
-                new_cur->right->parent = new_cur;
+                auto new_cur = make_full_copy(cur->left);
+                fully_reconnect(new_cur, cur, left);
             }
-
-            cur->right->parent = cur;
-
             cur = cur->left;
-
         }
     }
 
@@ -185,6 +187,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
     else
         prev->right = new_node;
     new_node->black = false;
+
     insert_fix(new_node);
     return true;
 } //for now BST
@@ -196,9 +199,12 @@ void Persistent_Tree<T>::insert_fix(shared_ptr<PNode<T>> cur){
             auto uncle = cur->parent->parent->right;
             if(!uncle->black){
                 cur->parent->black = true;
-                uncle->black = true;
-                uncle->parent->black = false;
-                cur = uncle->parent;
+                auto new_uncle = make_full_copy(uncle);
+                fully_reconnect(uncle, cur->parent->parent, false);
+
+                new_uncle->black = true;
+                new_uncle->parent->black = false;
+                cur = new_uncle->parent;
             }else {
                 if(cur->parent->right == cur){
                     cur = cur->parent;
@@ -212,9 +218,12 @@ void Persistent_Tree<T>::insert_fix(shared_ptr<PNode<T>> cur){
             auto uncle = cur->parent->parent->left;
             if(!uncle->black){
                 cur->parent->black = true;
-                uncle->black = true;
-                uncle->parent->black = false;
-                cur = uncle->parent;
+                auto new_uncle = make_full_copy(uncle);
+                fully_reconnect(new_uncle, cur->parent->parent, true);
+
+                new_uncle->black = true;
+                new_uncle->parent->black = false;
+                cur = new_uncle->parent;
             }else {
                 if(cur->parent->left == cur){
                     cur = cur->parent;
