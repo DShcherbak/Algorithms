@@ -174,3 +174,8 @@ HashTable<T>::~HashTable() {
                 delete HashNode;
     }
 }
+
+template <class T>
+void HashTable<T>::perform(const string &command) {
+
+}

@@ -206,3 +206,7 @@ Node<T>* Optimal_Binary_Tree<T>::minimum(Node<T>* cur){
     return cur;
 }
 
+template<class T>
+void Optimal_Binary_Tree<T>::perform(const string &command) {
+}
+

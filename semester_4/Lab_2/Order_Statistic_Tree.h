@@ -74,6 +74,9 @@ public:
 
     int get_element_rank(shared_ptr<T> elem);
 
+    void perform(const string& command);
+
+    void choose();
 
     int get_size();
 };

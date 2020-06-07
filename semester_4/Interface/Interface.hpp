@@ -18,6 +18,11 @@ Interface<Data_Structure, Elem>::~Interface(){
     delete data_structure;
 }
 
+template <class Data_Structure, class Elem>
+pair <string, bool> Interface<Data_Structure, Elem>::special_command() {
+    return special_commands[structure_type];
+}
+
 string convert_KB(int KB){
     if(KB <= 0){
         return "0 KB";
@@ -96,6 +101,7 @@ void Interface<Data_Structure, Elem>::perform() {
         cout << "(2) Пошук елемента"  << endl;
         cout << "(3) Вивести структуру в консоль"  << endl;
         cout << "(4) Видалити елемент"  << endl;
+        cout << "(5) Спеціалізовані команди"  << endl;
         cout << "(0) Exit"  << endl;
         cout << "Ваш вибір: ";
         char choice;
@@ -119,6 +125,7 @@ void Interface<Data_Structure, Elem>::perform_command(int command_code) {
     string name;
     shared_ptr<Folder> new_folder;
     bool OK;
+    pair <string, bool> possible_special_command;
     switch(command_code){
         case 1:
             cout << "Enter new folder name to insert: ";
@@ -143,6 +150,13 @@ void Interface<Data_Structure, Elem>::perform_command(int command_code) {
             new_folder = std::make_shared<Folder>(name);
             data_structure->delete_element(new_folder);
             break;
+        case 5:
+            possible_special_command = special_command();
+            cout << possible_special_command.first << endl;
+            if(possible_special_command.second){
+                data_structure->perform(possible_special_command.first);
+            }
+
         default:
             break;
     }

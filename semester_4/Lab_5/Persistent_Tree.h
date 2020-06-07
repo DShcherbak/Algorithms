@@ -13,6 +13,7 @@ class Persistent_Tree : public TreeInterface<T> {
 private:
     vector<RBNode<T>*> roots;
     int current = 0;
+    int last = 0;
     RBNode<T>* nil;
 
     void delete_node(RBNode<T>* cur);
@@ -47,6 +48,9 @@ public:
 
     void delete_element(shared_ptr<T> elem);
 
+    void history();
+
+    void perform(const string& command);
 
     void print();
 };

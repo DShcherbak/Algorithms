@@ -181,4 +181,9 @@ Node<T> *Splay_Tree<T>::splay(Node<T> *cur, shared_ptr<T> value) {
     }
 }
 
+template<class T>
+void Splay_Tree<T>::perform(const string &command) {
+
+}
+
 

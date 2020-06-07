@@ -473,6 +473,50 @@ int Order_Statistic_Tree<T>::get_size() {
     return root->size;
 }
 
+template <class T>
+void Order_Statistic_Tree<T>::perform(const string &command) {
+    if (command == "choose"){
+        choose();
+    }else{
+        cout << "No such command for Persistent tree: " << command << endl;
+    }
+}
+
+template <class T>
+void Order_Statistic_Tree<T>::choose() {
+    cout << "Введіть 1 щоб отримати елемент за рангом\n";
+    cout << "Введіть 2 щоб дізнатися ранг елемента в дереві\n";
+    int choice;
+    cin >> choice;
+    if(choice == 1){
+        cout << "Введіть ранг: ";
+        int rank;
+        cin >> rank;
+        auto node = get_node_by_number(root, rank);
+        if(node == nil){
+            cout << "Відсутній елемент з таким рангом.\n";
+        }else{
+            cout << "Rank : " << rank << "\nElement: " << convert_to_string(node->value) << endl;
+        }
+    } else if(choice == 2){
+        cout << "Введіть ім'я: ";
+        string name; int rank = -1;
+        cin >> name;
+        auto new_folder = std::make_shared<Folder>(name);
+        bool OK = find_element(new_folder);
+        if(OK)
+            rank = get_element_rank(new_folder);
+        if(!OK || rank == -1){
+            cout << "Елемент з таким ім'ям відсутній.";
+        }else{
+            cout << "Rank : " << rank << "\nElement: " << convert_to_string(new_folder) << endl;
+        }
+
+    } else{
+        cout << "Некоректний запит: " << choice;
+    }
+}
+
 
 
 

@@ -47,6 +47,9 @@ public:
 
     void delete_element(shared_ptr<T>);
 
+    void perform(const string &command);
+    
+
 };
 
 

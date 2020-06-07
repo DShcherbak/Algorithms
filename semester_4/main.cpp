@@ -72,8 +72,8 @@ Information_storage* read_database(const string &database) {
 }
 
 template <class Data_Structure>
-void create_interface_and_perform(Information_storage* info_storage, Data_Structure* data_structure){
-    auto interface = new Interface<Data_Structure, Folder>(info_storage, data_structure);
+void create_interface_and_perform(Information_storage* info_storage, Data_Structure* data_structure, int _structure_type = 0){
+    auto interface = new Interface<Data_Structure, Folder>(info_storage, data_structure, _structure_type);
     interface->perform();
     delete interface;
 }
@@ -104,20 +104,20 @@ void get_data_and_perform(int choice){
 
     if(choice == 1){
         auto structure = new HashTable<Folder>(base);
-        create_interface_and_perform(info_storage, structure);
+        create_interface_and_perform(info_storage, structure, choice);
 
     }else if(choice == 2){
         auto structure = new Order_Statistic_Tree<Folder>(base);
-        create_interface_and_perform(info_storage, structure);
+        create_interface_and_perform(info_storage, structure, choice);
     }else if(choice == 3){
         auto structure = new Splay_Tree<Folder>(base);
-        create_interface_and_perform(info_storage, structure);
+        create_interface_and_perform(info_storage, structure, choice);
     }else if(choice == 4){
         auto structure = new Optimal_Binary_Tree<Folder>(base);
-        create_interface_and_perform(info_storage, structure);
+        create_interface_and_perform(info_storage, structure, choice);
     }else if(choice == 5){
         auto structure = new Persistent_Tree<Folder>(base);
-        create_interface_and_perform(info_storage, structure);
+        create_interface_and_perform(info_storage, structure, choice);
     }
 }
 

@@ -42,6 +42,8 @@ public:
 
     bool find_element(shared_ptr<T> elem);
 
+    void perform(const string& command);
+
     void print();
 
 
