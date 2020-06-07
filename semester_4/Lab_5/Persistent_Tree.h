@@ -8,32 +8,53 @@
 
 #include "../Tree/Tree.h"
 #include "../Lab_2/Red_Black_Tree.h"
+
+template <class T>
+struct PNode : private Node<T>{
+    shared_ptr<T> value;
+    shared_ptr<PNode<T>> parent = nullptr;
+    shared_ptr<PNode<T>> left = nullptr;
+    shared_ptr<PNode<T>> right = nullptr;
+    bool black = true;
+
+    explicit PNode(shared_ptr<T> _value) : Node<T>(_value){
+        value = _value;
+        black = true;
+    }
+
+    PNode(){
+
+    }
+
+
+};
+
 template <class T>
 class Persistent_Tree : public TreeInterface<T> {
 private:
-    vector<RBNode<T>*> roots;
+    vector<shared_ptr<PNode<T>>> roots;
     int current = 0;
     int last = 0;
-    RBNode<T>* nil;
+    shared_ptr<PNode<T>> nil;
 
-    void delete_node(RBNode<T>* cur);
+    void delete_node(shared_ptr<PNode<T>> cur);
 
-    void transplant_tree(RBNode<T>* old_node, RBNode<T>* new_node);
+    void transplant_tree(shared_ptr<PNode<T>> old_node, shared_ptr<PNode<T>> new_node);
 
-    RBNode<T>* minimum(RBNode<T>* cur);
+    shared_ptr<PNode<T>> minimum(shared_ptr<PNode<T>> cur);
 
-    void print_node(RBNode<T>* cur, int depth = 0, bool left = false, vector<bool> draw = {});
-    void delete_subtree(RBNode<T> *cur);
+    void print_node(shared_ptr<PNode<T>> cur, int depth = 0, bool left = false, vector<bool> draw = {});
+    void delete_subtree(shared_ptr<PNode<T>> cur);
 
-    void left_rotate(RBNode<T>* cur);
-    void right_rotate(RBNode<T> *cur);
+    void left_rotate(shared_ptr<PNode<T>> cur);
+    void right_rotate(shared_ptr<PNode<T>> cur);
 
-    void insert_fix(RBNode<T> *cur);
-    void insert_fix_free(RBNode<T> *cur);
+    void insert_fix(shared_ptr<PNode<T>> cur);
+    void insert_fix_free(shared_ptr<PNode<T>> cur);
     void free_insert(shared_ptr<T> elem);
-    void delete_fix(RBNode<T> *cur);
+    void delete_fix(shared_ptr<PNode<T>> cur);
 
-    bool find_node(RBNode<T>* cur, shared_ptr<T> value);
+    bool find_node(shared_ptr<PNode<T>> cur, shared_ptr<T> value);
 
 public:
 

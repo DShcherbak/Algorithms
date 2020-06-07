@@ -8,14 +8,14 @@ using namespace std;
 
 template <class T>
 Persistent_Tree<T>::Persistent_Tree(){
-    nil = new RBNode<T>();
+    nil = make_shared<PNode<T>> (PNode<T>());
     roots[0] = nil;
     current = 0;
 }
 
 template <class T>
 Persistent_Tree<T>::Persistent_Tree(vector <shared_ptr<T>> included){
-    nil = new RBNode<T>();
+    nil = make_shared<PNode<T>> (PNode<T>());
     roots.push_back(nil);
     last = 0;
     current = 0;
@@ -27,9 +27,9 @@ Persistent_Tree<T>::Persistent_Tree(vector <shared_ptr<T>> included){
 
 template <class T>
 void Persistent_Tree<T>::free_insert(shared_ptr<T> new_elem){
-    RBNode<T>* cur = roots[0];
+    shared_ptr<PNode<T>> cur = roots[0];
     auto prev = cur;
-    auto new_node = new RBNode<T>(new_elem);
+    auto new_node = make_shared<PNode<T>>(PNode<T>(new_elem));
     new_node->left = nil;
     new_node->right = nil;
     while(cur != nil){
@@ -56,7 +56,7 @@ void Persistent_Tree<T>::free_insert(shared_ptr<T> new_elem){
 }
 
 template <class T>
-void Persistent_Tree<T>::insert_fix_free(RBNode<T>* cur){
+void Persistent_Tree<T>::insert_fix_free(shared_ptr<PNode<T>> cur){
     while(!cur->parent->black){
         if(cur->parent == cur->parent->parent->left){
             auto uncle = cur->parent->parent->right;
@@ -96,24 +96,17 @@ void Persistent_Tree<T>::insert_fix_free(RBNode<T>* cur){
 }
 
 template <class T>
-Persistent_Tree<T>::~Persistent_Tree(){
-    for(int i = last; i >= 0; i--){
-        auto root = roots[i];
-        if(root != nil)
-            delete_subtree(root);
-    }
-    delete nil;
-}
+Persistent_Tree<T>::~Persistent_Tree()= default;
 
 template <class T>
-void Persistent_Tree<T>::delete_subtree(RBNode<T>* cur) {
+void Persistent_Tree<T>::delete_subtree(shared_ptr<PNode<T>> cur) {
     if(!cur)
         return;
     if(cur == nil)
         return;
     delete_subtree(cur->left);
     delete_subtree(cur->right);
-    delete cur;
+    //delete cur;
 }
 
 template <class T>
@@ -128,7 +121,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
     current++;
     last++;
     string name = convert_to_string(roots[current-1]->value) + '*';
-    auto new_root = new RBNode<T>(make_shared<T>(name));
+    auto new_root = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
     new_root->left = roots[current-1]->left;
     new_root->left->parent = new_root;
 
@@ -138,10 +131,10 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
     new_root->parent = roots[current-1]->parent;
     roots.push_back(new_root);
 
-    RBNode<T>* cur = new_root;
+    shared_ptr<PNode<T>> cur = new_root;
 
     auto prev = cur;
-    auto new_node = new RBNode<T>(new_elem);
+    auto new_node = make_shared<PNode<T>>(PNode<T>(new_elem));
     new_node->left = nil;
     new_node->right = nil;
 
@@ -151,7 +144,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
         if((*cur->value) < (*new_elem)){
             if(cur->right != nil){
                 name = convert_to_string(cur->right->value) + '*';
-                auto new_cur = new RBNode<T>(make_shared<T>(name));
+                auto new_cur = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
                 new_cur->left = cur->right->left;
                 new_cur->right = cur->right->right;
                 new_cur->parent = cur;
@@ -166,7 +159,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
         else{
             if(cur->left != nil){
                 name = convert_to_string(cur->left->value) + '*';
-                auto new_cur = new RBNode<T>(make_shared<T>(name));
+                auto new_cur = make_shared<PNode<T>>(PNode<T>(make_shared<T>(name)));
                 new_cur->left = cur->left->left;
                 new_cur->right = cur->left->right;
                 new_cur->parent = cur;
@@ -197,7 +190,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
 } //for now BST
 
 template <class T>
-void Persistent_Tree<T>::insert_fix(RBNode<T>* cur){
+void Persistent_Tree<T>::insert_fix(shared_ptr<PNode<T>> cur){
     while(!cur->parent->black){
         if(cur->parent == cur->parent->parent->left){
             auto uncle = cur->parent->parent->right;
@@ -237,8 +230,8 @@ void Persistent_Tree<T>::insert_fix(RBNode<T>* cur){
 }
 
 template <class T>
-void Persistent_Tree<T>::delete_fix(RBNode<T>* cur) {
-    RBNode<T>* brother;
+void Persistent_Tree<T>::delete_fix(shared_ptr<PNode<T>> cur) {
+    shared_ptr<PNode<T>> brother;
     while(cur != roots[current] && cur->black){
         if(cur == cur->parent->left){
             brother= cur->parent->right;
@@ -306,7 +299,7 @@ void Persistent_Tree<T>::print(){
 }
 
 template <class T>
-void Persistent_Tree<T>::print_node(RBNode<T>* cur, int depth, bool left, vector<bool> draw) {
+void Persistent_Tree<T>::print_node(shared_ptr<PNode<T>> cur, int depth, bool left, vector<bool> draw) {
     if (cur == nil)
         return;
     vector<bool> new_draw = draw;
@@ -348,15 +341,15 @@ bool Persistent_Tree<T>::find_element(shared_ptr<T> elem){
 
 
 template <class T>
-void Persistent_Tree<T>::delete_node(RBNode<T>* cur) {
+void Persistent_Tree<T>::delete_node(shared_ptr<PNode<T>> cur) {
     if(current != last){
         cout << "Видалення неможливо, поки ви переглядаєте історію.";
         cout << " Поверніться в поточний стан (" << last << ") для видалення.\n";
         return;
     }
-    RBNode<T>* alt_cur = cur;
+    shared_ptr<PNode<T>> alt_cur = cur;
     bool is_alt_cur_black = alt_cur->black;
-    RBNode<T>* new_cur;
+    shared_ptr<PNode<T>> new_cur;
     if(cur->left == nil){
         new_cur = cur->right;
         transplant_tree(cur, cur->right);
@@ -381,7 +374,7 @@ void Persistent_Tree<T>::delete_node(RBNode<T>* cur) {
         alt_cur->left->parent = alt_cur;
         alt_cur->black = cur->black;
     }
-    delete cur;
+    //delete cur;
     if(is_alt_cur_black)
         delete_fix(new_cur);
 
@@ -390,7 +383,7 @@ void Persistent_Tree<T>::delete_node(RBNode<T>* cur) {
 }
 
 template <class T>
-void Persistent_Tree<T>::transplant_tree(RBNode<T>* old_node, RBNode<T>* new_node){
+void Persistent_Tree<T>::transplant_tree(shared_ptr<PNode<T>> old_node, shared_ptr<PNode<T>> new_node){
     if(old_node->parent == nil)
         roots[current] = new_node;
     else if(old_node->parent->left == old_node)
@@ -402,7 +395,7 @@ void Persistent_Tree<T>::transplant_tree(RBNode<T>* old_node, RBNode<T>* new_nod
 }
 
 template <class T>
-RBNode<T>* Persistent_Tree<T>::minimum(RBNode<T>* cur){
+shared_ptr<PNode<T>> Persistent_Tree<T>::minimum(shared_ptr<PNode<T>> cur){
     while(cur->left != nil)
         cur = cur->left;
     return cur;
@@ -410,7 +403,7 @@ RBNode<T>* Persistent_Tree<T>::minimum(RBNode<T>* cur){
 
 template <class T>
 void Persistent_Tree<T>::delete_element(shared_ptr<T> elem){
-    RBNode<T>* cur = roots[current];
+    shared_ptr<PNode<T>> cur = roots[current];
     while(cur != nil){
         if((*cur->value) == (*elem)){
             delete_node(cur);
@@ -430,7 +423,7 @@ void Persistent_Tree<T>::delete_element(shared_ptr<T> elem){
 }
 
 template<class T>
-void Persistent_Tree<T>::left_rotate(RBNode<T> *cur) {
+void Persistent_Tree<T>::left_rotate(shared_ptr<PNode<T>>cur) {
     if(cur->right == nil)
         return;
     auto next = cur->right;
@@ -450,7 +443,7 @@ void Persistent_Tree<T>::left_rotate(RBNode<T> *cur) {
 }
 
 template<class T>
-void Persistent_Tree<T>::right_rotate(RBNode<T> *cur) {
+void Persistent_Tree<T>::right_rotate(shared_ptr<PNode<T>> cur) {
     if(cur->left == nil)
         return;
     auto next = cur->left;
@@ -470,7 +463,7 @@ void Persistent_Tree<T>::right_rotate(RBNode<T> *cur) {
 }
 
 template<class T>
-bool Persistent_Tree<T>::find_node(RBNode<T> *cur, shared_ptr<T> value) {
+bool Persistent_Tree<T>::find_node(shared_ptr<PNode<T>>cur, shared_ptr<T> value) {
     if(cur == nil)
         return false;
     if((*cur->value) == (*value))
