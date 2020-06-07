@@ -132,7 +132,7 @@ void Order_Statistic_Tree<T>::delete_fix(OSNode<T>* cur) {
             brother= cur->parent->right;
             if(!brother->black){
                 brother->black = true;
-                cur->black = false;
+                cur->parent->black = false;
                 left_rotate(cur->parent);
                 brother = cur->parent->right;
             }
@@ -157,7 +157,7 @@ void Order_Statistic_Tree<T>::delete_fix(OSNode<T>* cur) {
                 brother = cur->parent->left;
                 if (!brother->black) {
                     brother->black = true;
-                    cur->black = false;
+                    cur->parent->black = false;
                     right_rotate(cur->parent);
                     brother = cur->parent->left;
                 }

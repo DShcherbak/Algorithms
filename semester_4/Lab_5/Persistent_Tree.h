@@ -56,6 +56,8 @@ private:
 
     bool find_node(shared_ptr<PNode<T>> cur, shared_ptr<T> value);
 
+    void fully_reconnect(shared_ptr<PNode<T>> new_node, shared_ptr<PNode<T>> father = nullptr, bool left = true);
+
 public:
 
     Persistent_Tree();

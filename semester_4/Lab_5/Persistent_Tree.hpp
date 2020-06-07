@@ -121,9 +121,11 @@ shared_ptr<PNode<T>> make_full_copy(shared_ptr<PNode<T>> old){
 }
 
 template <class T>
-void fully_reconnect(shared_ptr<PNode<T>> new_node, shared_ptr<PNode<T>> father = nullptr, bool left = true) {
-    new_node->left->parent = new_node;
-    new_node->right->parent = new_node;
+void Persistent_Tree<T>::fully_reconnect(shared_ptr<PNode<T>> new_node, shared_ptr<PNode<T>> father, bool left) {
+    if(new_node->left != nil)
+        new_node->left->parent = new_node;
+    if(new_node->right != nil)
+        new_node->right->parent = new_node;
     if(father){
         if(left)
             father->left = new_node;
@@ -171,7 +173,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
         else{
             if(cur->left != nil){
                 auto new_cur = make_full_copy(cur->left);
-                fully_reconnect(new_cur, cur, left);
+                fully_reconnect(new_cur, cur, true);
             }
             cur = cur->left;
         }
@@ -190,7 +192,7 @@ bool Persistent_Tree<T>::insert_element(shared_ptr<T> new_elem){
 
     insert_fix(new_node);
     return true;
-} //for now BST
+} //done persistent
 
 template <class T>
 void Persistent_Tree<T>::insert_fix(shared_ptr<PNode<T>> cur){
@@ -200,7 +202,7 @@ void Persistent_Tree<T>::insert_fix(shared_ptr<PNode<T>> cur){
             if(!uncle->black){
                 cur->parent->black = true;
                 auto new_uncle = make_full_copy(uncle);
-                fully_reconnect(uncle, cur->parent->parent, false);
+                fully_reconnect(new_uncle, cur->parent->parent, false);
 
                 new_uncle->black = true;
                 new_uncle->parent->black = false;
@@ -243,55 +245,84 @@ void Persistent_Tree<T>::delete_fix(shared_ptr<PNode<T>> cur) {
     shared_ptr<PNode<T>> brother;
     while(cur != roots[current] && cur->black){
         if(cur == cur->parent->left){
-            brother= cur->parent->right;
+            brother = cur->parent->right;
             if(!brother->black){
-                brother->black = true;
-                cur->black = false;
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, false);
+                new_brother->black = true;
+                cur->parent->black = false;
                 left_rotate(cur->parent);
                 brother = cur->parent->right;
             }
             if(brother->left->black && brother->right->black){
-                brother->black = false;
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, false);
+                new_brother->black = false;
                 cur = cur->parent;
             }else {
-                if(brother->right->black){
-                    brother->left->black = true;
-                    brother->black = false;
-                    right_rotate(brother);
-                    brother = cur->parent->right;
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, false);
+                if(new_brother->right->black){
+                    auto lefty = nil;
+                    if(new_brother->left != nil){
+                        lefty = make_full_copy(new_brother->left);
+                        fully_reconnect(lefty, new_brother, true);
+                    }
+                    lefty->black = true;
+                    new_brother->black = false;
+                    right_rotate(new_brother);
+                    new_brother = cur->parent->right;
                 }
-                brother->black = cur->parent->black;
+                new_brother->black = cur->parent->black;
                 cur->parent->black = true;
-                brother->right->black = true;
+                auto righty = nil;
+                if(new_brother->right != nil){
+                    righty = make_full_copy(new_brother->right);
+                    fully_reconnect(righty, new_brother, false);
+                }
+                righty->black = true;
                 left_rotate(cur->parent);
                 cur = roots[current];
             }
-        }else {
-            if (cur == cur->parent->right) {
+        }else { // cur == cur->parent->right
+            brother = cur->parent->left;
+            if (!brother->black) {
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, true);
+                brother->black = true;
+                cur->parent->black = false;
+                right_rotate(cur->parent);
                 brother = cur->parent->left;
-                if (!brother->black) {
-                    brother->black = true;
-                    cur->black = false;
-                    right_rotate(cur->parent);
-                    brother = cur->parent->left;
-                }
-                if (brother->right->black && brother->left->black) {
-                    brother->black = false;
-                    cur = cur->parent;
-
-                } else {
-                    if (brother->left->black) {
-                        brother->right->black = true;
-                        brother->black = false;
-                        left_rotate(brother);
-                        brother = cur->parent->left;
+            }
+            if (brother->right->black && brother->left->black) {
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, true);
+                new_brother->black = false;
+                cur = cur->parent;
+            } else {
+                auto new_brother = make_full_copy(brother);
+                fully_reconnect(new_brother, cur->parent, true);
+                if (new_brother->left->black) {
+                    auto righty = nil;
+                    if(new_brother->right != nil){
+                        righty = make_full_copy(new_brother->right);
+                        fully_reconnect(righty, new_brother, false);
                     }
-                    brother->black = cur->parent->black;
-                    cur->parent->black = true;
-                    brother->left->black = true;
-                    right_rotate(cur->parent);
-                    cur = roots[current];
+                    righty->black = true;
+                    new_brother->black = false;
+                    left_rotate(new_brother);
+                    new_brother = cur->parent->left;
                 }
+                new_brother->black = cur->parent->black;
+                cur->parent->black = true;
+                auto lefty = nil;
+                if(new_brother->left != nil){
+                    lefty = make_full_copy(new_brother->left);
+                    fully_reconnect(lefty, new_brother, true);
+                }
+                lefty->black = true;
+                right_rotate(cur->parent);
+                cur = roots[current];
             }
         }
     }
@@ -348,29 +379,37 @@ bool Persistent_Tree<T>::find_element(shared_ptr<T> elem){
     return Persistent_Tree<T>::find_node(roots[current], elem);
 }
 
-
 template <class T>
 void Persistent_Tree<T>::delete_node(shared_ptr<PNode<T>> cur) {
-    if(current != last){
-        cout << "Видалення неможливо, поки ви переглядаєте історію.";
-        cout << " Поверніться в поточний стан (" << last << ") для видалення.\n";
-        return;
-    }
     shared_ptr<PNode<T>> alt_cur = cur;
     bool is_alt_cur_black = alt_cur->black;
     shared_ptr<PNode<T>> new_cur;
+
     if(cur->left == nil){
         new_cur = cur->right;
-        transplant_tree(cur, cur->right);
+        new_cur->parent = cur;
+        transplant_tree(cur, cur->right); //persistent
     }
     else if(cur->right == nil){
         new_cur = cur->left;
-        transplant_tree(cur, cur->left);
+        new_cur->parent = cur;
+        transplant_tree(cur, cur->left); //persistent
     }
     else{
-        alt_cur = minimum(cur->right);
+        auto righty = nil;
+        if(cur->right != nil){
+            righty = make_full_copy(cur->right);
+            fully_reconnect(righty, cur, false);
+        }
+        alt_cur = minimum(righty);
         is_alt_cur_black = alt_cur->black;
-        new_cur = alt_cur->right;
+
+        new_cur = nil;
+        if(alt_cur->right != nil){
+            new_cur = make_full_copy(alt_cur->right);
+            fully_reconnect(new_cur, alt_cur, false);
+        }
+
         if(alt_cur->parent == cur)
             new_cur->parent = alt_cur;
         else{
@@ -381,14 +420,11 @@ void Persistent_Tree<T>::delete_node(shared_ptr<PNode<T>> cur) {
         transplant_tree(cur, alt_cur);
         alt_cur->left = cur->left;
         alt_cur->left->parent = alt_cur;
-        alt_cur->black = cur->black;
+        alt_cur->black = cur->black; //looks persistent to me
     }
     //delete cur;
     if(is_alt_cur_black)
         delete_fix(new_cur);
-
-
-
 }
 
 template <class T>
@@ -405,30 +441,59 @@ void Persistent_Tree<T>::transplant_tree(shared_ptr<PNode<T>> old_node, shared_p
 
 template <class T>
 shared_ptr<PNode<T>> Persistent_Tree<T>::minimum(shared_ptr<PNode<T>> cur){
-    while(cur->left != nil)
+    if(!cur)
+        return cur;
+    while(cur->left != nil){
+        auto new_cur = make_full_copy(cur->left);
+        fully_reconnect(new_cur, cur, true);
         cur = cur->left;
+    }
     return cur;
 }
 
 template <class T>
 void Persistent_Tree<T>::delete_element(shared_ptr<T> elem){
-    shared_ptr<PNode<T>> cur = roots[current];
+    if(current != last){
+        cout << "Видалення неможливо, поки ви переглядаєте історію.";
+        cout << " Поверніться в поточний стан (" << last << ") для видалення.\n";
+        return;
+    }
+
+    current++;
+    last++;
+
+    //create new root
+    auto new_root = make_full_copy(roots[current-1]);
+    fully_reconnect(new_root);
+    roots.push_back(new_root);
+
+    // create cir and prev pointers
+    shared_ptr<PNode<T>> cur = new_root;
+    auto prev = cur;
+
+    //going down the tree
     while(cur != nil){
-        if((*cur->value) == (*elem)){
+        prev = cur;
+        if((*cur->value) == (*elem)) {
             delete_node(cur);
             return;
-        }else if((*cur->value) < (*elem)){
-            if(!cur->right)
-                return;
-            else
-                cur = cur->right;
-        }else{
-            if(cur->left == nil)
-                return;
-            else
-                cur = cur->left;
+        }
+        else if ((*cur->value) < (*elem)){
+            if(cur->right != nil){
+                auto new_cur = make_full_copy(cur->right);
+                fully_reconnect(new_cur, cur, false);
+            }
+            cur = cur->right;
+        }
+        else {
+            if(cur->left != nil){
+                auto new_cur = make_full_copy(cur->left);
+                fully_reconnect(new_cur, cur, left);
+            }
+            cur = cur->left;
         }
     }
+
 }
 
 template<class T>
