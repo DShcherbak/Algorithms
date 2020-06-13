@@ -10,6 +10,6 @@ add_executable(semester_4 main.cpp
         Lab_2/Order_Statistic_Tree.h Lab_2/Order_Statistic_Tree.hpp
         Lab_3/Splay_Tree.hpp Lab_3/Splay_Tree.h
         Lab_4/Optimal_Binary_Tree.hpp Lab_4/Optimal_Binary_Tree.h
-        Lab_5/Persistent_Tree.hpp Lab_5/Persistent_Tree.h)
+        Lab_5/Persistent_Tree.hpp Lab_5/Persistent_Tree.h Lab_6/B_Tree.hpp Lab_6/B_Tree.h Lab_7/Binomial_Heap.hpp Lab_7/Binomial_Heap.h)
 
 target_link_libraries(${PROJECT_NAME} sqlite3)

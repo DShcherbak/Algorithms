@@ -97,6 +97,7 @@ void HashTable<T>::delete_element(shared_ptr<T> elem) {
 template <class T>
 HashTable<T>::HashTable(vector<shared_ptr<T>> included){
     vector <pair <HashNode<T>*, int>> hashes;
+    M = included.size();
     table.assign(M, {});
     vector <vector<shared_ptr<T>>> pre_table(M);
     a.assign(M,0);
@@ -120,7 +121,7 @@ HashTable<T>::HashTable(vector<shared_ptr<T>> included){
                 bool collisions = true;
             while(collisions){
                 vector <bool> is_hashed(m[i],0);
-                a[i] = random_int(0, mod-1);
+                a[i] = random_int(1, mod-1);
                 b[i] = random_int(0, mod-2);
                 collisions = false;
                 for(auto elem : pre_table[i]){

@@ -27,14 +27,19 @@ double Optimal_Binary_Tree<T>::sum(int i, int j){
     return node_sum;
 }
 
+int c = 0;
+int cc = 0;
+
 template <class T>
 double Optimal_Binary_Tree<T>::go(int i, int j)
 {
+    c++;
     double temp;
     if (i > j)
         return (i == j+1 ? _miss_probabilities[i] : 0);
     if (DP[i][j] == INF){
         for (int k = i; k <= j; k++){
+            cc++;
             if(k == 0)
                 temp = _partial_error_sum[0];
             else
@@ -48,6 +53,8 @@ double Optimal_Binary_Tree<T>::go(int i, int j)
             }
         }
     }
+
+
     return DP[i][j];
 }
 
@@ -122,6 +129,8 @@ Optimal_Binary_Tree<T>::Optimal_Binary_Tree(const vector <shared_ptr<T>>& includ
         }
     }
     go(0,n-1);
+    cout << "NUMBER OF \'GO\': " << c << endl;
+    cout << "NUMBER OF \'GO++\': " << cc << endl;
     /*for(int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
             cout << "(" << DP[i][j] << ", "  << _root[i][j] << ") ";
