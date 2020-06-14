@@ -3,6 +3,7 @@
 #include "Lab_3/Splay_Tree.h"
 #include "Lab_4/Optimal_Binary_Tree.h"
 #include "Lab_5/Persistent_Tree.h"
+#include "Lab_7/Fibonacci_Heap.h"
 #include "Interface/Interface.h"
 #include "sqlite3pp-master/headeronly_src/sqlite3pp.h"
 //#include "Folder/Folder.h"
@@ -119,6 +120,10 @@ void get_data_and_perform(int choice){
         auto structure = new Persistent_Tree<Folder>(base);
         create_interface_and_perform(info_storage, structure, choice);
     }
+    else if(choice == 7){
+        auto structure = new Fibonacci_Heap<Folder>(base);
+        create_interface_and_perform(info_storage, structure, choice);
+    }
 }
 
 int main() {
@@ -132,6 +137,7 @@ int main() {
         cout << "(3) Splay Tree\n";
         cout << "(4) Optimal Binary Tree\n";
         cout << "(5) Persistent Red-Black Tree\n";
+        cout << "(7) Binomial heap\n";
         cout << "(0) Exit\n";
         cout << "Ваш вибір: ";
         char choice;
